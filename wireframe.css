@@ -1,46 +1,51 @@
-.logo {
+.logocontainer {
 	float:left;
+	display:block;
 	width:20%;
 }
 
-.nav {
-	float:left;
-	display:block;
+.logo {
+	width:auto;
+	height:auto;
+	max-height: 100%;
+    max-width: 100%;
 }
 
 .login {
-	float:right;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: Arial, Helvetica, sans-serif;
+	display: block;
+	padding: 14px 25px;
+	font-size: 20px;
 }
 
-nav {
-	background-color: #99ff33;
+.topnav {
 	overflow: hidden;
 	font-family: Arial, Helvetica, sans-serif;
 	text-align: center;
 }
   
-nav a {
+.topnav a {
+	float: left;
 	display: block;
-	padding: 10px;
 	text-decoration: none;
 	padding: 14px 25px;
 	font-size: 20px;
 }
   
-nav a:link, a:visited {
+.topnav, .login a:link, a:visited {
 	background-position: center;
 	text-decoration: none;
-	display: inline-block;
-	
 }
   
-nav a:hover, a:active {
-	background-color: rgb(0, 247, 255);
+.topnav, .login a:hover, a:active {
+	color: rgb(0, 247, 255);
 }
 
 .topnav .icon {
 	display: none;
-  }
+}
   
 @media screen and (max-width: 600px) {
 	.topnav a:not(:first-child) {display: none;}
