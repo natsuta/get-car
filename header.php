@@ -21,8 +21,6 @@
 		<a href="javascript:void(0);" class="icon" onclick="openmenu()">
 			<i class="fa fa-bars"></i>
 		</a>
-	</div>
-	<div class="topnav">
 		<?php 
 			if(isset($_SESSION['user'])){
 				echo "<a href='logout.php'>Logout</a>";
@@ -33,6 +31,7 @@
 			}
 		?>
 	</div>
+
 	<script>
 		function openmenu() {
 			var x = document.getElementById("mytopnav");
