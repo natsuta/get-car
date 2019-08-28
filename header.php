@@ -11,6 +11,8 @@
 	<!-- This is for the menu icon -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+	<title> GetCar </title>
+	<div class="content" id="mycontent">
 	<div class="logocontainer"><img class="logo" src="logo.png"/></div>
 	<div class="topnav" id="mytopnav">
 		<a href="index.php">Home</a>
@@ -30,6 +32,7 @@
 				echo "<a href='login.php'>Login</a>";
 			}
 		?>
+	</div>
 	</div>
 
 	<script>
