@@ -1,6 +1,6 @@
 <?php include_once("header.php"); ?>
   <body>
-    <form action="Register_process.php" method="post">
+    <form action="register_process.php" method="post">
       <div class ="registration">
         <h2>Register</h2>
         <p>First Name:

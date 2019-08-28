@@ -1,7 +1,7 @@
 <?php include_once("header.php"); ?>
 
 <body>
-  <form action="Login_process.php" method="post">
+  <form action="login_process.php" method="post">
     <div class ="login">
       <h2>Login</h2>
       <p>Email:
