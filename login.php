@@ -1,5 +1,14 @@
 <?php include_once("header.php"); ?>
 
+<style>
+        body {
+            max-width: 1180px;
+            width: 98%;
+            margin: 0px auto;
+            text-align: left;
+        }
+</style>
+
 <body>
   <form action="login.php" method="post">
     <div class ="login">
@@ -14,4 +23,5 @@
     </div>
   </form>
 </body>
+
 <?php include_once("footer.php"); ?>

@@ -1,6 +1,16 @@
 <?php include_once("header.php"); ?>
+ 
+<style>
+        body{
+            max-width: 1180px;
+            width: 98%;
+            margin: 0px auto;
+            text-align: left;
+        }
+</style>
+ 
   <body>
-    <form action="register.php" method="post">
+	<form action="register.php" method="post">
       <div class ="registration">
         <h2>Register</h2>
         <p>Email:
@@ -18,7 +28,8 @@
     </form>
 
     <div class="container signin">
-      <p>Already have an account?<a href="login.php">Sign in</a></p>
+      <p>Already have an account? <a href="login.php">Sign in</a></p>
     </div>
   </body>
+  
 <?php include_once("footer.php"); ?>
