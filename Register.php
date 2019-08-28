@@ -17,11 +17,11 @@
           <input type="email" name="Email" required maxlength="50"></p>
         <p>Password:
           <br>
-          <input type="text" name="Password" required maxlength="50"></p>
+          <input type="password" name="Password" required maxlength="50"></p>
 
         <p>Repeat Password:
           <br>
-          <input type="text" name="RePassword" required maxlength="50"></p>
+          <input type="password" name="RePassword" required maxlength="50"></p>
 
         <button type="submit" class="registerbtn" name="Register">Register</button>
       </div>
