@@ -1,5 +1,5 @@
 <?php
-$servername = "10.118.128.3";
+$servername = "104.154.78.63";
 $username = "root";
 $password = "123456";
 $dbname = "getcar";

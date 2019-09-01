@@ -19,16 +19,36 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-	<div class="logocontainer"><img class="logo" src="logo.png"/></div>
-	<div class="topnav" id="mytopnav">
-		<a href="index.php">Home</a>
-		<a href="menu.php">About Us</a>
-		<a href="order.php">How to Use</a>
-		<a href="cart.php">Pricing</a>
-		<a href="queue.php">Locations and Cars</a>
-		<a href="javascript:void(0);" class="icon" onclick="openmenu()">
-			<i class="fa fa-bars"></i>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<!-- Logo -->
+		<a class="navbar-brand" href="index.php">
+		<img class="logo" src="logo.png" style="width:100px;"/>
 		</a>
+
+		<!-- Toggler -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<!-- Links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a href="index.php">Home</a>
+				</li>
+				<li class="nav-item">
+					<a href="about.php">About Us</a>
+				</li>
+				<li class="nav-item">
+					<a href="howto.php">How to Use</a>
+				</li>
+				<li class="nav-item">
+					<a href="prices.php">Pricing</a>
+				</li>
+				<li class="nav-item">
+					<a href="cars.php">Locations and Cars</a>
+				</li>
+
 		<?php 
 			if(isset($_SESSION['user'])){
 				echo "<a href='logout.php'>Logout</a>";
@@ -38,17 +58,5 @@
 				echo "<a href='login.php'>Login</a>";
 			}
 		?>
-	</div>
-
-	<script>
-		function openmenu() {
-			var x = document.getElementById("mytopnav");
-			if (x.className === "topnav") {
-				x.className += " responsive";
-			}
-			else {
-				x.className = "topnav";
-			}
-		}
-	</script>
+	</nav>
 </head>
