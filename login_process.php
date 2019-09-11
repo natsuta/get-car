@@ -23,6 +23,7 @@ else {
 		$_SESSION['email'] = $row['email'];
 		$_SESSION['firstName'] = $row['firstName'];
 		$_SESSION['lastName'] = $row['lastName'];
+		$_SESSION['usertype'] = 'Customer';
 
 		echo"You are now logged in.";
 	} 
