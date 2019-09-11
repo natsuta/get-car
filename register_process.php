@@ -14,7 +14,6 @@ else {
 	$LastName = $_POST['LastName'];
 	$Mobile = $_POST['Mobile'];
 	$Email = $_POST['Email'];
-	$UserType = "Customer";
 	$Password = $_POST['Password'];
 	$RePassword = $_POST['RePassword'];
 
@@ -37,8 +36,8 @@ else {
 
 		else {
 
-			$query = "insert into customers(email, firstName, lastName, mobile, userType, password) 
-				VALUES('$Email', '$FirstName', '$LastName', '$Mobile', '$UserType', '$PasswordHash')";      
+			$query = "insert into customers(email, firstName, lastName, mobile, password) 
+				VALUES('$Email', '$FirstName', '$LastName', '$Mobile', '$PasswordHash')";      
 			$result=$conn->query($query);
 		
 			if($result) {
