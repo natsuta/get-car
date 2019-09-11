@@ -1,12 +1,12 @@
-<?php include_once("header.php"); ?>
+<?php include_once("../header.php"); ?>
 
 <body>
   <form action="login_process.php" method="post">
     <div class ="login">
-      <h2>Login</h2>
+      <h2>Staff Login</h2>
       <p>Email:
         <br>
-        <input type="text" name="Email" required></p>
+        <input type="text" name="Username" required></p>
       <p>Password:
         <br>
         <input type="password" name="Password" required></p>
@@ -14,4 +14,4 @@
     </div>
   </form>
 </body>
-<?php include_once("footer.php"); ?>
+<?php include_once("../footer.php"); ?>

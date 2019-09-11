@@ -12,8 +12,7 @@ if ($conn->connect_error) {
 else {
 	$FirstName = $_POST['FirstName'];
 	$LastName = $_POST['LastName'];
-	$Mobile = $_POST['Mobile'];
-	$Email = $_POST['Email'];
+	$Username = $_POST['Username'];
 	$Password = $_POST['Password'];
 	$RePassword = $_POST['RePassword'];
 
@@ -25,29 +24,29 @@ else {
 		//hash the password
 		$PasswordHash = hash($Password, PASSWORD_DEFAULT);
 		
-		//connect to database and see if email exists
-		$sql="select * from customers where email = '$Email'";
+		//connect to database and see if username exists
+		$sql="select * from staff where username = '$Username'";
 		$result = $conn->query($sql);
 		$row=mysqli_fetch_array($result);
 
 		if($row) {
-		echo "Email already exists";
+		echo "Username already exists";
 		}
 
 		else {
 
-			$query = "insert into customers(email, firstName, lastName, mobile, password) 
-				VALUES('$Email', '$FirstName', '$LastName', '$Mobile', '$PasswordHash')";      
+			$query = "insert into staff(username, firstName, lastName, password) 
+				VALUES('$Username', '$FirstName', '$LastName', '$PasswordHash')";      
 			$result=$conn->query($query);
 		
 			if($result) {
 				mysqli_commit($conn);
 				mysqli_close($conn);
-				echo "Registered successful!";
+				echo "Registration successful. The user ".$Username."can now <a href='login.php'>log in</a>";
 			}
 
 			else {
-				echo "Registered failed!"; 
+				echo "Registration failed. Go back to <a href='register.php'>registration page</a>"; 
 			}
 		}
 	}
