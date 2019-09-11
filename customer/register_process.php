@@ -1,7 +1,7 @@
 <?php
-$servername = "104.154.78.63";
+$servername = "localhost";
 $username = "root";
-$password = "123456";
+$password = "getcar123456";
 $dbname = "getcar";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -23,8 +23,8 @@ else {
 		
 	else {
 		//hash the password
-		$PasswordHash = hash($Password, PASSWORD_DEFAULT);
-		
+		$PasswordHash = password_hash($Password, PASSWORD_DEFAULT);
+
 		//connect to database and see if email exists
 		$sql="select * from customers where email = '$Email'";
 		$result = $conn->query($sql);

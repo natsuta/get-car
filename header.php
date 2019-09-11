@@ -21,7 +21,7 @@
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 		<!-- Logo -->
 		<a class="navbar-brand" href="index.php">
-			<img src="logo.png" style="width:100px;"/>
+			<img src="http://104.154.78.63/~getcar/logo.png" style="width:100px;"/>
 		</a>
 
 		<!-- Toggler -->
@@ -33,33 +33,33 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="index.php">Home</a>
+					<a class="nav-link" href="http://104.154.78.63/~getcar/index.php">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="about.php">About Us</a>
+					<a class="nav-link" href="http://104.154.78.63/~getcar/about.php">About Us</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="howto.php">How to Use</a>
+					<a class="nav-link" href="http://104.154.78.63/~getcar/howto.php">How to Use</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="prices.php">Pricing</a>
+					<a class="nav-link" href="http://104.154.78.63/~getcar/prices.php">Pricing</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="cars.php">Locations and Cars</a>
+					<a class="nav-link" href="http://104.154.78.63/~getcar/cars.php">Locations and Cars</a>
 				</li>
 
 			<?php 
 				if(isset($_SESSION['user'])){
 					echo "<li class='nav-item'>";
-					echo "<a class='nav-link' href='logout.php'>Logout</a>";
+					echo "<a class='nav-link' href='http://104.154.78.63/~getcar/customer/logout.php'>Logout</a>";
 					echo "</li>";
 				}
 				else {
 					echo "<li class='nav-item'>";
-					echo "<a class='nav-link' href='register.php'>Register</a>";
+					echo "<a class='nav-link' href='http://104.154.78.63/~getcar/customer/register.php'>Register</a>";
 					echo "</li>";
 					echo "<li class='nav-item'>";
-					echo "<a class='nav-link' href='login.php'>Login</a>";
+					echo "<a class='nav-link' href='http://104.154.78.63/~getcar/customer/login.php'>Login</a>";
 					echo "</li>";
 				}
 			?>

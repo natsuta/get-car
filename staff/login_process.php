@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$servername = "104.154.78.63";
+$servername = "localhost";
 $username = "root";
-$password = "123456";
+$password = "getcar123456";
 $dbname = "getcar";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

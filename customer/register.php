@@ -14,7 +14,7 @@
           <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" name="Mobile" placeholder="Number only" required maxlength="11"></p>
         <p>Email:
           <br>
-          <input type="email" name="Email" required maxlength="50"></p>
+          <input type="text" name="Email" required maxlength="50"></p>
         <p>Password:
           <br>
           <input type="password" name="Password" required maxlength="50"></p>
