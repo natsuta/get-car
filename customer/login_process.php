@@ -20,15 +20,6 @@ else {
 	$result = $conn->query($sql);
 	$row=mysqli_fetch_array($result);
 
-	if($row) {
-		echo $row['email'];
-		echo $row['password'];
-	}
-
-	else {
-		echo "row not found";
-	}
-
 	if (password_verify($Password, $row['password'])) {
 		$_SESSION['email'] = $row['email'];
 		$_SESSION['firstName'] = $row['firstName'];

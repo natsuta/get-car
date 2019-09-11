@@ -49,9 +49,9 @@
 				</li>
 
 			<?php 
-				if(isset($_SESSION['user'])){
+				if(isset($_SESSION['usertype'])){
 					echo "<li class='nav-item'>";
-					echo "<a class='nav-link' href='http://104.154.78.63/~getcar/customer/logout.php'>Logout</a>";
+					echo "<a class='nav-link' href='http://104.154.78.63/~getcar/logout.php'>Logout</a>";
 					echo "</li>";
 				}
 				else {
@@ -67,12 +67,15 @@
 		</div>
 	</nav>
 
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script>
-		$(document).ready(function() {
-			// get current URL path and assign 'active' class
-			var pathname = window.location.pathname;
-			$('.navbar-nav > li > a[href="'+pathname+'"]').parent().addClass('active');
-		})
+		$(function(){
+			$('a').each(function(){
+				if ($(this).prop('href') == window.location.href) {
+					$(this).addClass('active'); $(this).parents('li').addClass('active');
+				}
+			});
+		});
 	</script>
 
 </head>
