@@ -16,9 +16,19 @@ else {
 	$Email = $_POST["Email"];
 	$Password = $_POST["Password"];
 
-	$sql = "select * from customers where email = '$Email' and password='$Password'";
+	$sql = "select * from customers where email='$Email'";
 	$result = $conn->query($sql);
 	$row=mysqli_fetch_array($result);
+
+	if($row) {
+		echo $row['email'];
+		echo $row['password'];
+	}
+
+	else {
+		echo "row not found";
+	}
+
 	if (password_verify($Password, $row['password'])) {
 		$_SESSION['email'] = $row['email'];
 		$_SESSION['firstName'] = $row['firstName'];

@@ -13,12 +13,12 @@ if ($conn->connect_error) {
 }
 else {
 
-	$Email = $_POST["Email"];
+	$Username = $_POST["Username"];
 	$Password = $_POST["Password"];
 
 	$sql = "select * from staff where username = '$Username' and password='$Password'";
 	$result = $conn->query($sql);
-	$row=mysqli_fetch_array($result);
+	$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 	if (password_verify($Password, $row['password'])) {
 		$_SESSION['username'] = $row['username'];
 		$_SESSION['firstName'] = $row['firstName'];
