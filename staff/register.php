@@ -1,7 +1,13 @@
-<?php include_once("../header.php"); ?>
+<?php include_once("../header.php"); 
+	if(!isset($_SESSION['username']) && !($_SESSION['username'] == "admin")) {
+		echo "You do not have permission to access this page.";
+		include_once("../footer.php"); 
+		exit();
+	}
+?>
   <body>
     <form action="register_process.php" method="post">
-      <div class ="registration">
+      <div class="registration">
         <h2>Staff Registration</h2>
         <p>First Name:
           <br>
