@@ -4,7 +4,7 @@
   <form action="login_process.php" method="post">
     <div class ="login">
       <h2>Staff Login</h2>
-      <p>Email:
+      <p>Username:
         <br>
         <input type="text" name="Username" required></p>
       <p>Password:

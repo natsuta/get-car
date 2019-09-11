@@ -16,7 +16,7 @@ else {
 	$Username = $_POST["Username"];
 	$Password = $_POST["Password"];
 
-	$sql = "select * from staff where username = '$Username' and password='$Password'";
+	$sql = "select * from staff where username = '$Username'";
 	$result = $conn->query($sql);
 	$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 	if (password_verify($Password, $row['password'])) {
