@@ -45,11 +45,11 @@
 <body>
 
 	<div class="hero-image">
-	<div class="hero-text">
-		<h1 style="font-size:50px">Welcome to GetCar</h1>
-		<p>Sign up now to use our services!</p>
-		<button onclick="window.location.href = 'customer/register.php';">Register</button>
-	</div>
+		<div class="hero-text">
+			<h1 style="font-size:50px">Welcome to GetCar</h1>
+			<p>Sign up now to use our services!</p>
+			<button onclick="window.location.href = 'customer/register.php';">Register</button>
+		</div>
 	</div>
 
 	<div class="content">
