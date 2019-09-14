@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS `rental`(
    `rental_id` INT UNSIGNED AUTO_INCREMENT,
-   `useid` INT NOT NULL,
+   `userid` INT NOT NULL,
    `carsid` INT NOT NULL,
    `start_date` DATE,
    `end_date` DATE,
