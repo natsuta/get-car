@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-<link rel="stylesheet" type="text/css" href="mystyle.css">
-</head>
-
 <body>
 	<h2>Rental Infomation</h2>
 	<div class="container">
@@ -65,5 +58,3 @@
 	</div>
 	
 </body>
-
-</html>

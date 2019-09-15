@@ -1,4 +1,3 @@
-<?php include_once("../header.php"); ?>
   <body>
     <form action="register_process.php" method="post">
       <div class ="registration">
@@ -31,4 +30,3 @@
       <p>Already have an account?<a href="login.php">Sign in</a></p>
     </div>
   </body>
-<?php include_once("../footer.php"); ?>

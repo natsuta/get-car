@@ -1,5 +1,3 @@
-<?php include_once("../header.php"); ?>
-
 <body>
   <form action="login_process.php" method="post">
     <div class ="login">
@@ -14,4 +12,3 @@
     </div>
   </form>
 </body>
-<?php include_once("../footer.php"); ?>

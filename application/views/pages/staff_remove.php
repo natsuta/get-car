@@ -1,4 +1,4 @@
-<?php include_once("../header.php"); 
+<?php
 	if(!isset($_SESSION['username']) && !($_SESSION['username'] == "admin")) {
 		echo "You do not have permission to access this page.";
 		include_once("../footer.php"); 
@@ -53,5 +53,3 @@
 	</div>
 	
 </body>
-
-<?php include_once("../footer.php"); ?>
