@@ -1,34 +1,35 @@
 <?php include_once("header.php"); ?>
+ 
+<style>
+        body{
+            max-width: 1180px;
+            width: 98%;
+            margin: 0px auto;
+            text-align: left;
+        }
+</style>
+ 
   <body>
-    <form action="Register_process.php" method="post">
+	<form action="register.php" method="post">
       <div class ="registration">
         <h2>Register</h2>
-        <p>First Name:
-          <br>
-          <input type="text" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')" name="FirstName" placeholder="Alphabet only" required maxlength="20"></p>
-        <p>Last Name:
-          <br>
-          <input type="text" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')" name="LastName" placeholder="Alphabet only" required maxlength="20"></p>
-        <p>Mobile Phone:
-          <br>
-          <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" name="Mobile" placeholder="Number only" required maxlength="11"></p>
         <p>Email:
           <br>
-          <input type="email" name="Email" required maxlength="50"></p>
+          <input type="text" name="email" required></p>
         <p>Password:
           <br>
-          <input type="text" name="Password" required maxlength="50"></p>
-
+          <input type="text" name="password" required></p>
         <p>Repeat Password:
           <br>
-          <input type="text" name="RePassword" required maxlength="50"></p>
+          <input type="text" name="repassword" required></p>
 
-        <button type="submit" class="registerbtn" name="Register">Register</button>
+        <button type="submit" class="registerbtn">Register</button>
       </div>
     </form>
 
     <div class="container signin">
-      <p>Already have an account?<a href="login.php">Sign in</a></p>
+      <p>Already have an account? <a href="login.php">Sign in</a></p>
     </div>
   </body>
+  
 <?php include_once("footer.php"); ?>
