@@ -1,5 +1,5 @@
   <body>
-    <form action="register_process.php" method="post">
+    <form action="cust_register_process" method="post">
       <div class ="registration">
         <h2>Register</h2>
         <p>First Name:

@@ -51,7 +51,7 @@
 			<?php 
 				if(isset($_SESSION['usertype'])){
 					echo "<li class='nav-item'>";
-					echo "<a class='nav-link' href=".base_url("logout.php").">Logout</a>";
+					echo "<a class='nav-link' href=".base_url("logout").">Logout</a>";
 					echo "</li>";
 				}
 				else {

@@ -1,5 +1,5 @@
 <body>
-  <form action="login_process.php" method="post">
+  <form action="cust_login_process" method="post">
     <div class ="login">
       <h2>Login</h2>
       <p>Email:
