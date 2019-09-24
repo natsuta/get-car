@@ -42,7 +42,7 @@
 					<a class="nav-link" href="<?php echo base_url("howto"); ?>">How to Use</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?php echo base_url("prices"); ?>">Pricing</a>
+					<a class="nav-link" href="<?php echo base_url("book"); ?>">Book Now</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="<?php echo base_url("cars"); ?>">Locations and Cars</a>
