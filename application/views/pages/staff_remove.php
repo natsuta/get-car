@@ -7,7 +7,7 @@
 ?>
 
 <body>
-	<h2>Cars</h2>
+	<h2>Staff</h2>
 	<div class="container">
 			
 	<?php
