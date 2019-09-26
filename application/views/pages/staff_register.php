@@ -6,7 +6,7 @@
 	}
 ?>
   <body>
-    <form action="staff_register_process.php" method="post">
+    <form action="staff_register_process" method="post">
       <div class="registration">
         <h2>Staff Registration</h2>
         <p>First Name:

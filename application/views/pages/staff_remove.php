@@ -12,9 +12,9 @@
 			
 	<?php
 		
-		$servername = "127.0.0.1";
+		$servername = "localhost";
 		$username = "root";
-		$password = "123456";
+		$password = "getcar123456";
 		$dbname = "getcar";
 
 		$conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -23,7 +23,7 @@
 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		}
 
-			$sql = "SELECT * FROM cars;";
+			$sql = "SELECT * FROM staff WHERE staffID >1;";
 			$result=mysqli_query($conn,$sql);
 
 			$num_rows=mysqli_num_rows($result);
@@ -31,14 +31,14 @@
 			$i=0;
 			while ($row = mysqli_fetch_assoc($result)){	
 			?>
-			<div class="cars">
+			<div class="staff">
 
 				<?php
-				echo "<label>".$row['brand']."</label>"."<br>";
-				echo "<label>".$row['model']."</label>"."<br>";
-				echo "<label>".$row['hourly_price']."</label>"."<br>";
-				echo "<label>".$row['daily_price']."</label>"."<br>";
-	?>
+				echo "<label>".$row['staffID']."</label>"."<br>";
+				echo "<label>".$row['username']."</label>"."<br>";
+				echo "<label>".$row['firstName']."</label>"."<br>";
+				echo "<label>".$row['lastName']."</label>"."<br>";
+				?>
 
 			<button type="button" name="booking">Booking</button>
 			</div>
