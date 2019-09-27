@@ -47,6 +47,11 @@
 				<li class="nav-item">
 					<a class="nav-link" href="<?php echo base_url("cars"); ?>">Locations and Cars</a>
 				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link" href="<?php echo base_url("book"); ?>">Bookings</a>
+				</li>
+
 
 			<?php 
 				if(isset($_SESSION['usertype'])){
