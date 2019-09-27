@@ -8,6 +8,7 @@
 <body>
 	<h2>Staff</h2>
 	<div class="container">
+	<form action="staff_remove" method="post">
 	<table>
 		<tr>
 			<td>Staff ID</td>
@@ -29,6 +30,12 @@
 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		}
 
+		if(isset($_POST['remove'])) {
+			$index = $_POST['remove'];
+			$sql = "DELETE FROM `staff` WHERE `staff`.`staffID` = $index";
+			mysqli_query($conn, $sql);
+		}
+
 			$sql = "SELECT * FROM staff WHERE staffID > 1;";
 			$result=mysqli_query($conn,$sql);
 
@@ -43,7 +50,7 @@
 				echo "<td>".$row['firstName']."</td>";
 				echo "<td>".$row['lastName']."</td>";
 				?>
-				<td><button type="submit" name="remove" value="<?php echo $row['staffID'] ?>">Remove</button></td>
+				<td><button type="submit" name="remove" onclick="confirmDelete()" value="<?php echo $row['staffID'] ?>">Remove</button></td>
 			</tr>
 	<?php
 	}
@@ -51,6 +58,13 @@
 					
 	?>
 	</table>
+	</form>
 	</div>
 	
 </body>
+
+<script type="text/javascript">
+	function confirmDelete() {
+		confirm("Are you sure you want to delete this user?");
+	}
+</script>
