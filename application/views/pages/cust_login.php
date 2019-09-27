@@ -1,3 +1,11 @@
+<?php
+	if(isset($_SESSION['username']) || isset ($_SESSION['email'])) {
+		echo "You are already logged in.";
+		include_once("../footer.php"); 
+		exit();
+	}
+?>
+
 <body>
   <form action="cust_login_process" method="post">
     <div class ="login">
