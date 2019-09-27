@@ -48,7 +48,7 @@
 			<?php 
 				if(isset($_SESSION['usertype']) && $_SESSION['usertype'] == 'Customer'){
 					echo "<li class='nav-item'>";
-					echo "<a class='nav-link' href==".base_url("book").">Bookings</a>";
+					echo "<a class='nav-link' href=".base_url("book").">Bookings</a>";
 					echo "</li>";
 				}
 				
@@ -66,7 +66,7 @@
 					echo "</li>";
 				}
 
-				if(isset($_SESSION['usertype']) && $_SESSION['username'] == "admin") {
+				if(isset($_SESSION['username']) && $_SESSION['username'] == "admin") {
 					echo "<li class='nav-item dropdown'><a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>Admin";
 					echo "<span class='caret'></span></a>";
 					echo "<ul class='dropdown-menu'>";
