@@ -67,6 +67,16 @@
 					echo "<a class='nav-link' href=".base_url("cust_login").">Login</a>";
 					echo "</li>";
 				}
+
+				if(isset($_SESSION['usertype']) && $_SESSION['username'] == "admin") {
+					echo "<li class='nav-item dropdown'><a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>Admin";
+					echo "<span class='caret'></span></a>";
+					echo "<ul class='dropdown-menu'>";
+					echo "<li><a href=".base_url("staff_register").">Add staff</a></li>";
+					echo "<li><a href=".base_url("staff_remove").">Remove staff</a></li>";
+					echo "</ul>";
+					echo "</li>";
+				}
 			?>
 			</ul>
 		</div>

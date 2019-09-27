@@ -1,4 +1,4 @@
-# car-share
+# GetCar (get-car)
 For Capstone Project Semester 2 2019
 
 Team members:

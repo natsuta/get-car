@@ -45,8 +45,10 @@
 	<div class="hero-image">
 		<div class="hero-text">
 			<h1 style="font-size:50px">Welcome to GetCar</h1>
-			<p>Sign up now to use our services!</p>
-			<button onclick="window.location.href = 'cust_register';">Register</button>
+			<?php if(!isset($_SESSION['usertype'])) { ?>
+				<p>Sign up now to use our services!</p>
+				<button onclick="window.location.href = 'cust_register';">Register</button>
+			<?php } ?>
 		</div>
 	</div>
 
