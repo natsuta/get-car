@@ -23,7 +23,7 @@ else {
 		$_SESSION['lastName'] = $row['lastName'];
 		$_SESSION['usertype'] = 'Staff';
 
-		echo"You are now logged in.";
+		echo "You are now logged in.";
 	} 
 	else {
 		echo "Error! Something wrong in your username or password!";
