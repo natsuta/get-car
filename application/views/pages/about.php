@@ -3,7 +3,7 @@ Page under construction
 <h1>Calculator</h1>
 
 <form>
-	<select name="type" id="type" onchange="calcprice()">
+	<select name="type" id="type" onchange="javascript:calcprice()">
 		<option value="econ">Economy car</option>
 		<option value="stdc">Standard car</option>
 		<option value="suvw">SUV/Wagon</option>
@@ -15,11 +15,11 @@ Page under construction
 	<input type="radio" onclick="javascript:display();" name="booking" id="daily"> Daily booking
 
 	<div id="hourcalc" style="display:none">
-		Hours: <input id="hours" type="number" min="1" max="6">
+		Hours: <input id="hours" type="number" min="1" max="6" onchange="javascript:calcprice()">
 	</div>
 
 	<div id="daycalc" style="display:none">
-		Days: <input id="days" type="number" min="1" max="5">
+		Days: <input id="days" type="number" min="1" max="5" onchange="javascript:calcprice()">
 	</div>
 
 	<p id="total"></p>
@@ -40,31 +40,42 @@ Page under construction
 	}
 
 	function calcprice() {
-		var type = document.getElementById("type");
+		var type = document.getElementById("type").value;
 		var hourrate;
 		var dayrate;
 
-		switch (type){
-			case econ:
+		switch (type) {
+			case "econ":
 				hourrate = 7;
 				dayrate = 40;
 				break;
-			case stdc:
+			case "stdc":
 				hourrate = 8.5;
 				dayrate = 50;
 				break;
-			case suvw:
+			case "suvw":
 				hourrate = 11;
 				dayrate = 65;
 				break;
-			case wvan:
+			case "wvan":
 				hourrate = 13;
 				dayrate = 72;
 				break;
-			case prem:
+			case "prem":
 				hourrate = 15;
 				dayrate = 88;
 				break;
 		}
+
+		if (document.getElementById("hourly").checked) {
+			var hours = document.getElementById("hours").value;
+			var total = hours * hourrate;
+		}
+
+		else {
+			var days = document.getElementById("days").value;
+			var total = days * dayrate;
+		}
+		document.getElementById("total").innerHTML = "Total: $" + total;
 	}
 </script>
