@@ -11,7 +11,7 @@
 </style>  
   
   <body>
-    <form action="booking_process.php" method="post">
+    <form action="booking_process" method="post">
       <div class ="booking">
         <h2>Book Now</h2>
 		
