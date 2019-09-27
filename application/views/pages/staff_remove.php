@@ -9,7 +9,14 @@
 <body>
 	<h2>Staff</h2>
 	<div class="container">
-			
+	<table>
+		<tr>
+			<td>Staff ID</td>
+			<td>Username</td>
+			<td>First Name</td>
+			<td>Last Name</td>
+		</tr>
+
 	<?php
 		
 		$servername = "localhost";
@@ -23,33 +30,28 @@
 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		}
 
-			$sql = "SELECT * FROM staff WHERE staffID >1;";
+			$sql = "SELECT * FROM staff WHERE staffID > 1;";
 			$result=mysqli_query($conn,$sql);
 
 			$num_rows=mysqli_num_rows($result);
 
-			$i=0;
 			while ($row = mysqli_fetch_assoc($result)){	
 			?>
-			<div class="staff">
-
+			<tr>
 				<?php
-				echo "<label>".$row['staffID']."</label>"."<br>";
-				echo "<label>".$row['username']."</label>"."<br>";
-				echo "<label>".$row['firstName']."</label>"."<br>";
-				echo "<label>".$row['lastName']."</label>"."<br>";
+				echo "<td>".$row['staffID']."</td>";
+				echo "<td>".$row['username']."</td>";
+				echo "<td>".$row['firstName']."</td>";
+				echo "<td>".$row['lastName']."</td>";
 				?>
-
-			<button type="button" name="booking">Booking</button>
-			</div>
+				<td><button type="button" name="remove" value="<?php echo $row['staffID'] ?>" >Remove</button></td>
+			</tr>
 	<?php
-
-		echo "</tr>";
-		$i++;
 	}
 	mysqli_close($conn);
 					
 	?>
+	</table>
 	</div>
 	
 </body>
