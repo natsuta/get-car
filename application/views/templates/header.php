@@ -67,8 +67,8 @@
 					echo "<li class='nav-item dropdown'><a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>Admin";
 					echo "<span class='caret'></span></a>";
 					echo "<ul class='dropdown-menu'>";
-					echo "<li><a href='staff_register'>Add staff</a></li>";
-					echo "<li><a href='staff_remove'>Remove staff</a></li>";
+					echo "<li><a href=".base_url("staff_register").">Add staff</a></li>";
+					echo "<li><a href=".base_url("staff_remove").">Remove staff</a></li>";
 					echo "</ul>";
 					echo "</li>";
 				}

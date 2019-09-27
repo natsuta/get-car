@@ -9,24 +9,44 @@ Page under construction
 		<option value="suvw">SUV/Wagon</option>
 		<option value="wvan">Van</option>
 		<option value="prem">Premium car</option>
-	</select>
+	</select><br/>
 
-	<input type="radio" name="booking" value="hourly"> Hourly booking
-	<input type="radio" name="booking" value="daily"> Daily booking
+	<input type="radio" name="booking" id="hourly"> Hourly booking<br/>
+	<input type="radio" name="booking" id="daily"> Daily booking
 
-	<p>Booking date: </p>
-	<p>Return date: </p>
+	<div id="hourcalc" style="display:none">
+		Hours: <input id="hours" type="number" min="1" max="6">
+	</div>
+
+	<div id="daycalc" style="display:none">
+		Days: <input id="days" type="number" min="1" max="5">
+	</div>
 
 	<p id="total"></p>
 </form>
 
 <script type="text/javascript">
+	document.getElementById("hourly").addEventListener("click", display());
+	document.getElementById("daily").addEventListener("click", display());
+	
+	function display() {
+		if (document.getElementById("hourly").checked) {
+			document.getElementById("hourcalc").style.display = 'block';
+			document.getElementById("daycalc").style.display = 'none';
+		}
+
+		else {
+			document.getElementById("hourcalc").style.display = 'none';
+			document.getElementById("daycalc").style.display = 'block';
+		}
+	}
+
 	function calcprice() {
-		var type = document.getElementByID("type");
+		var type = document.getElementById("type");
 		var hourrate;
 		var dayrate;
 
-		switch type:
+		switch (type){
 			case econ:
 				hourrate = 7;
 				dayrate = 40;
@@ -47,7 +67,6 @@ Page under construction
 				hourrate = 15;
 				dayrate = 88;
 				break;
-		
-
+		}
 	}
 </script>
