@@ -11,8 +11,8 @@ Page under construction
 		<option value="prem">Premium car</option>
 	</select><br/>
 
-	<input type="radio" name="booking" id="hourly"> Hourly booking<br/>
-	<input type="radio" name="booking" id="daily"> Daily booking
+	<input type="radio" onclick="javascript:display();" name="booking" id="hourly"> Hourly booking<br/>
+	<input type="radio" onclick="javascript:display();" name="booking" id="daily"> Daily booking
 
 	<div id="hourcalc" style="display:none">
 		Hours: <input id="hours" type="number" min="1" max="6">
@@ -26,8 +26,6 @@ Page under construction
 </form>
 
 <script type="text/javascript">
-	document.getElementById("hourly").addEventListener("click", display());
-	document.getElementById("daily").addEventListener("click", display());
 	
 	function display() {
 		if (document.getElementById("hourly").checked) {
