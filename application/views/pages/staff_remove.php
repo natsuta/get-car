@@ -1,7 +1,6 @@
 <?php
 	if(!isset($_SESSION['username']) && !($_SESSION['username'] == "admin")) {
 		echo "You do not have permission to access this page.";
-		include_once("../footer.php"); 
 		exit();
 	}
 ?>
@@ -44,7 +43,7 @@
 				echo "<td>".$row['firstName']."</td>";
 				echo "<td>".$row['lastName']."</td>";
 				?>
-				<td><button type="button" name="remove" value="<?php echo $row['staffID'] ?>" >Remove</button></td>
+				<td><button type="submit" name="remove" value="<?php echo $row['staffID'] ?>">Remove</button></td>
 			</tr>
 	<?php
 	}

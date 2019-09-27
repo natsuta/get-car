@@ -1,7 +1,6 @@
 <?php
 	if(!isset($_SESSION['username']) && !($_SESSION['username'] == "admin")) {
 		echo "You do not have permission to access this page.";
-		include_once("../footer.php"); 
 		exit();
 	}
 ?>
