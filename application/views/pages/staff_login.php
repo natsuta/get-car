@@ -1,5 +1,12 @@
+<?php
+	if(isset($_SESSION['username']) || isset ($_SESSION['email'])) {
+		echo "You are already logged in.";
+		exit();
+	}
+?>
+
 <body>
-  <form action="staff_login_process.php" method="post">
+  <form action="staff_login_process" method="post">
     <div class ="login">
       <h2>Staff Login</h2>
       <p>Username:

@@ -1,20 +1,27 @@
 <?php
 	if(!isset($_SESSION['username']) && !($_SESSION['username'] == "admin")) {
 		echo "You do not have permission to access this page.";
-		include_once("../footer.php"); 
 		exit();
 	}
 ?>
 
 <body>
-	<h2>Cars</h2>
+	<h2>Staff</h2>
 	<div class="container">
-			
+	<form action="staff_remove" method="post">
+	<table>
+		<tr>
+			<td>Staff ID</td>
+			<td>Username</td>
+			<td>First Name</td>
+			<td>Last Name</td>
+		</tr>
+
 	<?php
 		
-		$servername = "127.0.0.1";
+		$servername = "localhost";
 		$username = "root";
-		$password = "123456";
+		$password = "getcar123456";
 		$dbname = "getcar";
 
 		$conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -23,33 +30,41 @@
 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		}
 
-			$sql = "SELECT * FROM cars;";
+		if(isset($_POST['remove'])) {
+			$index = $_POST['remove'];
+			$sql = "DELETE FROM `staff` WHERE `staff`.`staffID` = $index";
+			mysqli_query($conn, $sql);
+		}
+
+			$sql = "SELECT * FROM staff WHERE staffID > 1;";
 			$result=mysqli_query($conn,$sql);
 
 			$num_rows=mysqli_num_rows($result);
 
-			$i=0;
 			while ($row = mysqli_fetch_assoc($result)){	
 			?>
-			<div class="cars">
-
+			<tr>
 				<?php
-				echo "<label>".$row['brand']."</label>"."<br>";
-				echo "<label>".$row['model']."</label>"."<br>";
-				echo "<label>".$row['hourly_price']."</label>"."<br>";
-				echo "<label>".$row['daily_price']."</label>"."<br>";
-	?>
-
-			<button type="button" name="booking">Booking</button>
-			</div>
+				echo "<td>".$row['staffID']."</td>";
+				echo "<td>".$row['username']."</td>";
+				echo "<td>".$row['firstName']."</td>";
+				echo "<td>".$row['lastName']."</td>";
+				?>
+				<td><button type="submit" name="remove" onclick="confirmDelete()" value="<?php echo $row['staffID'] ?>">Remove</button></td>
+			</tr>
 	<?php
-
-		echo "</tr>";
-		$i++;
 	}
 	mysqli_close($conn);
 					
 	?>
+	</table>
+	</form>
 	</div>
 	
 </body>
+
+<script type="text/javascript">
+	function confirmDelete() {
+		confirm("Are you sure you want to delete this user?");
+	}
+</script>

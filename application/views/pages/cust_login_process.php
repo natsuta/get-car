@@ -25,7 +25,7 @@ else {
 		$_SESSION['lastName'] = $row['lastName'];
 		$_SESSION['usertype'] = 'Customer';
 
-		echo"You are now logged in.";
+		header("home");
 	} 
 	else {
 		echo "Error! Something wrong in your username or password!";
