@@ -42,11 +42,11 @@ else {
 			if($result) {
 				mysqli_commit($conn);
 				mysqli_close($conn);
-				echo "Registration successful. The user ".$Username."can now <a href='login.php'>log in</a>";
+				echo "Registration successful. The user ".$Username."can now <a href='login'>log in</a>";
 			}
 
 			else {
-				echo "Registration failed. Go back to <a href='register.php'>registration page</a>"; 
+				echo "Registration failed. Go back to <a href='register'>registration page</a>"; 
 			}
 		}
 	}
