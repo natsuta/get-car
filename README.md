@@ -18,3 +18,8 @@ Team members:
 - Placeholder pages for About Us, How to Use, Pricing and Locations and Cars added
 - Customer, Staff, Car, Locations and Rental tables created in database
 - Registration and login now working
+
+## Release 3 - 28 September 2019
+- Booking form and database added (but still to be refined)
+- Content added to About Us and How to Use pages
+- Access limitations added to certain pages
