@@ -32,7 +32,7 @@ else {
 	$result = $conn->query($sql);
 	$row = mysqli_fetch_array($result);
 	
-	$sql2 = "select * from rates where carTypeID = '$row[carTypeID]";
+	$sql2 = "select * from rates where carTypeID = '$row[carTypeID]'";
 	$result2 = $conn->query($sql2);
 	$row2 = mysqli_fetch_array($result2);
 	$hourlyrate = $row2['hourlyrate'];
