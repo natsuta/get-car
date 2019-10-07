@@ -18,6 +18,14 @@ else {
 	$startdate = $_POST['pickupdate']." ".$_POST['pickuptime'].":00";
 	$enddate = $_POST['returndate']." ".$_POST['returntime'].":00";
 
+	$starttimestamp = strtotime($startdate);
+	$endtimestamp = strtotime($enddate);
+	$difference = ($endtimestamp - $starttimestamp)/3600;
+
+	if ($difference < 1) {
+		die("Time selection invalid, please try again");
+	}
+
 	$query = "insert into rental(customerID, locationID, carID, start_date, end_date) 
 		VALUES('$customerID', '$location', '$car', '$startdate', '$enddate')";      
 	$result=$conn->query($query);

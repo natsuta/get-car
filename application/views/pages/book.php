@@ -1,17 +1,23 @@
-<style>
-
-.booking {
-	margin: auto;
-	font-family: Arial, Helvetica, sans-serif;
-	display: block;
-	padding: 14px 25px;
-	font-size: 15px;
-}
-
-</style>
 <head>
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 <head>
+
+<style>
+	.booking {
+		margin: auto;
+		font-family: Arial, Helvetica, sans-serif;
+		display: block;
+		padding: 14px 25px;
+		font-size: 15px;
+	}
+</style>
+
+<?php
+	if(!isset($_SESSION['email'])) {
+		echo "You do not have permission to access this page.";
+		exit();
+	}
+?>
 <script type="text/javascript">
 	//Code acknowledgement: https://www.w3schools.com/php/php_ajax_database.asp
 	function showCars(str) {
