@@ -12,7 +12,7 @@
 
 <script type="text/javascript">
 	//Code acknowledgement: https://www.w3schools.com/php/php_ajax_database.asp
-	function showVehicles(str) {
+	function showCars(str) {
 	if (str=="") {
 		document.getElementById("carmodule").innerHTML="";
 		return;
@@ -28,7 +28,7 @@
 		document.getElementById("carmodule").innerHTML=this.responseText;
 		}
 	}
-	xmlhttp.open("GET","getvehicles?q="+str,true);
+	xmlhttp.open("GET","getcars?q="+str,true);
 	xmlhttp.send();
 	}
 </script>
@@ -58,7 +58,7 @@ else {
 				$sql = "select * from locations";
 				$result = $conn->query($sql);
 			?>
-			<select name="location" onchange="showVehicles(this.value)">
+			<select name="location" onchange="showCars(this.value)">
 				<option value="">Select a location...</option>
 				<?php
 					while($row=mysqli_fetch_array($result)){
@@ -67,9 +67,9 @@ else {
 				?>
 			</select>
 		  </p>
-		<p>Select Vehicle:
+		<p>Select Car:
 			<br>
-			<!-- Vehicle module -->
+			<!-- Car module, field name is "car" -->
 			<div id="carmodule">
 				<p>Please note that the header and footer will appear again when you select a location, that is unfortunately how CodeIgniter works and I can't do anything about it</p>
 			</div>
