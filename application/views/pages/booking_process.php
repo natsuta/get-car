@@ -11,12 +11,11 @@ if ($conn->connect_error) {
 }
 
 else {
-	$pickuplocation = $_POST['pickuplocation'];
-	$returnlocation = $_POST['returnlocation'];
-	$bodytype = $_POST['bodytype'];
+	$customerID = $_SESSION['customerID'];
+	$location = $_POST['location'];
 	$car = $_POST['car'];
-	$pickupdate = $_POST['pickupdate'];
-	$returndate = $_POST['returndate'];
+	$startdate = $_POST['pickupdate'].$_POST['pickuptime'];
+	$enddate = $_POST['returndate'].$_POST['returntime'];
 if($pickupdate == $returndate) {
 		echo"You have to rent the car more than one day";
 	}
@@ -24,8 +23,8 @@ if($pickupdate == $returndate) {
 	else{
 
 
-			$query = "insert into Bookings(Pickup_location, Return_location, Bodytype, Vehicle_selected, Pickup_date, Return_date) 
-				VALUES('$pickuplocation', '$returnlocation', '$bodytype', '$car', '$pickupdate', '$returndate')";      
+			$query = "insert into Bookings(customerID, locationID, carID, start_date, end_Date) 
+				VALUES('$customerID', '$location', '$car', '$startdate', '$enddate')";      
 			$result=$conn->query($query);
 		
 			if($result) {

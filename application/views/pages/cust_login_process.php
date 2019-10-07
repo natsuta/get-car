@@ -20,6 +20,7 @@ else {
 	$row=mysqli_fetch_array($result);
 
 	if (password_verify($Password, $row['password'])) {
+		$_SESSION['customerID'] = $row['customerID'];
 		$_SESSION['email'] = $row['email'];
 		$_SESSION['firstName'] = $row['firstName'];
 		$_SESSION['lastName'] = $row['lastName'];
