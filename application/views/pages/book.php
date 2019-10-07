@@ -8,75 +8,94 @@
 	font-size: 15px;
 }
 
-</style>  
+</style>
+
+<script type="text/javascript">
+	//Code acknowledgement: https://www.w3schools.com/php/php_ajax_database.asp
+	function showVehicles(str) {
+	if (str=="") {
+		document.getElementById("carmodule").innerHTML="";
+		return;
+	}
+	if (window.XMLHttpRequest) {
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp=new XMLHttpRequest();
+	} else { // code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function() {
+		if (this.readyState==4 && this.status==200) {
+		document.getElementById("carmodule").innerHTML=this.responseText;
+		}
+	}
+	xmlhttp.open("GET","getvehicles?q="+str,true);
+	xmlhttp.send();
+	}
+</script>
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "getcar123456";
+$dbname = "getcar";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+ 
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error); 
+}
+else {
+?>
   
   <body>
     <form action="booking_process" method="post">
       <div class ="booking">
         <h2>Book Now</h2>
 		
-		<p>Select Pickup Location:
-          <br>
-          <select name="pickuplocation">
-		  <option value="airport">Melbourne Airport</option>
-		  <option value="central">Melbourne Central</option>
-		  <option value="southbank">Southbank</option>
-		  <option value="footscray">Footscray</option>
-		  <option value="sunshine">Sunshine</option>
-		  <option value="stkilda">St Kilda</option>
-		  <option value="williamstown">Williamstown</option>
-		  <option value="essendon">Essendon</option>
-		  </select>
-		  
-		<p>Select Return Location:
-          <br>
-          <select name="returnlocation">
-		  <option value="airport">Melbourne Airport</option>
-		  <option value="central">Melbourne Central</option>
-		  <option value="southbank">Southbank</option>
-		  <option value="footscray">Footscray</option>
-		  <option value="sunshine">Sunshine</option>
-		  <option value="stkilda">St Kilda</option>
-		  <option value="williamstown">Williamstown</option>
-		  <option value="essendon">Essendon</option>
-		  </select>
-		  
-        <p>Select Body Type:
-          <br>
-          <select name="bodytype">
-		  <option value="sedan">Sedan</option>
-		  <option value="hatch">Hatch</option>
-		  <option value="coupe">Coupe</option>
-		  <option value="suv">SUV</option>
-		  </select>
-		  
-        <p>Select Vehicle:
-          <br>
-          <select name="car">
-		  <option value="nissan1">Nissan Pulsar 2016</option>
-		  <option value="nissan2">Nissan Patrol 2017</option>
-		  <option value="honda1">Honda Civic 2015</option>
-		  <option value="honda2">Honda Accord 2019</option>
-		  </select>
-		  
-        <p>Pickup Date & Time:
+		<p>Select Location:
+        	<br>
+			<?php
+				$sql = "select * from locations";
+				$result = $conn->query($sql);
+			?>
+			<select name="location" onchange="showVehicles(this.value)">
+				<option value="">Select a location...</option>
+				<?php
+					while($row=mysqli_fetch_array($result)){
+						echo "<option value='$row[location_id]'>$row[location_address]</option>";
+					}
+				?>
+			</select>
+		  </p>
+		<p>Select Vehicle:
+			<br>
+			<!-- Vehicle module -->
+			<div id="carmodule">
+				<p>Please note that the header and footer will appear again when you select a location, that is unfortunately how CodeIgniter works and I can't do anything about it</p>
+			</div>
+			</p>
+        <p>Pickup Date:
           <br>
           <input type="date" name="pickupdate">
-		  
-
-        <p>Return Date & Time:
+		  </p>
+		<p>Pickup Time:
+          <br>
+          <input type="time" name="pickuptime">
+		  </p>
+        <p>Return Date:
           <br>
           <input type="date" name="returndate">
-	
+		  </p>
+		<p>Return Time:
+          <br>
+          <input type="time" name="returntime">
+		  </p>
 			<br>
-			<br>
-			
         <button type="submit" class="bookbtn" name="Book">Confirm</button>
 		
       </div>
     </form>
-
-    <div class="container register">
-      <p>Don't have a GetCar account?<a href="cust_register"> <b><u>Sign up</u></a>.</b></p>
-    </div>
   </body>
+<?php
+}
+?>
