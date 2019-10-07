@@ -14,34 +14,25 @@ else {
 	$customerID = $_SESSION['customerID'];
 	$location = $_POST['location'];
 	$car = $_POST['car'];
-	$startdate = $_POST['pickupdate'].$_POST['pickuptime'];
-	$enddate = $_POST['returndate'].$_POST['returntime'];
-if($pickupdate == $returndate) {
-		echo"You have to rent the car more than one day";
+	//change the date/time format
+	$startdate = $_POST['pickupdate']." ".$_POST['pickuptime'].":00";
+	$enddate = $_POST['returndate']." ".$_POST['returntime'].":00";
+
+	$query = "insert into rental(customerID, locationID, carID, start_date, end_date) 
+		VALUES('$customerID', '$location', '$car', '$startdate', '$enddate')";      
+	$result=$conn->query($query);
+
+	if($result) {
+		mysqli_commit($conn);
+		
+		echo "Booking added! </a>";
 	}
-		
-	else{
-
-
-			$query = "insert into Bookings(customerID, locationID, carID, start_date, end_Date) 
-				VALUES('$customerID', '$location', '$car', '$startdate', '$enddate')";      
-			$result=$conn->query($query);
-		
-			if($result) {
-				mysqli_commit($conn);
-				
-				echo "Booking added! </a>";
-			}
-			else {
-				echo "Booking failed</a>"; 
-			}
-			mysqli_close($conn);
-		}
+	else {
+		echo $query;
+		echo "Booking failed</a>"; 
+	}
+	mysqli_close($conn);
 	
 }
 	
-	
-	
 ?>
-
-
