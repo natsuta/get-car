@@ -1,19 +1,98 @@
-Page under construction
+<style>
+	body, html {
+		height: 100%;
+		margin: 0;
+	}
+
+	.hero-image {
+		background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/imgs/howtobanner.jpg");
+		height: 50%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+	}
+
+	.hero-text {
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: white;
+	}
+
+	.hero-text button {
+		border: none;
+		outline: 0;
+		display: inline-block;
+		padding: 10px 25px;
+		color: black;
+		background-color: #ddd;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	.hero-text button:hover {
+		background-color: #555;
+		color: white;
+	}
+
+</style>
+
+<body>
+
+	<div class="hero-image">
+		<div class="hero-text">
+			<h1 style="font-size:50px">GetCar Guide</h1>
+			<?php if(!isset($_SESSION['usertype'])) { ?>
+				<p>Whether you're running an errand across town or exploring a city far from home, getting there should be easy.</p>
+				<button onclick="window.location.href = 'cust_register';">Register</button>
+			<?php } ?>
+		</div>
+	</div>
+
+</body>
+
+	<div class="content">
+		<center>
+			<br>
+			<h2>How to use the GetCar service</h2>
+			<p>
+			<b>1. Create an account</b> - All you need is an email and mobile number. You can register an account from our website <u><a href="cust_register">here</a></u>. If you already have one, book <u><a href="book">here</a></u>.
+			<br>
+			<br>
+			<b>2. Select your location</b> - Choose from our list of pickup/return locations. We currently operate in Federation Square, Southern Cross and Melbourne Airport.
+			<br>
+			<br>
+			<b>3. Select your vehicle</b> - GetCar provides a wide range of vehicles to choose from. Economy, Standard, SUV/Wagon, Van and Premium.
+			<br>
+			<br>
+			<b>4. Enter your pickup/return date & time</b> - At GetCar we allow both hourly and daily options. Please use our calculator below for price estimations.
+			<br>
+			<br>
+			<b>5. Confirm booking & checkout</b> - Submit your booking form and checkout through your prefered payment method.
+			<br>
+			<br>
+			<b>6. Enjoy and relax</b> - Collect your vehicle and enjoy your time. Return your vehicle to the same location when your time period comes to an end.
+			</p>
+		</center>
+	</div>
 
 <div class="calculator" style="text-align:center;">
-	<h2>Calculator</h2>
+	<h2>Price Calculator</h2>
 
 	<form>
-		<select name="type" id="type" onchange="javascript:calcprice();">
-			<option value="econ">Economy car</option>
-			<option value="stdc">Standard car</option>
+		Vehicle: <select name="type" id="type" onchange="javascript:calcprice();">
+			<option value="econ">Economy</option>
+			<option value="stdc">Standard</option>
 			<option value="suvw">SUV/Wagon</option>
 			<option value="wvan">Van</option>
-			<option value="prem">Premium car</option>
+			<option value="prem">Premium</option>
 		</select><br/>
 
-		<input type="radio" onclick="javascript:display();" name="booking" id="hourly"> Hourly booking<br/>
-		<input type="radio" onclick="javascript:display();" name="booking" id="daily"> Daily booking
+		<input type="radio" onclick="javascript:display();" name="booking" id="hourly"> Hourly Rate<br/>
+		<input type="radio" onclick="javascript:display();" name="booking" id="daily"> Daily Rate
 
 		<div id="hourcalc" style="display:none">
 			Hours: <input id="hours" type="number" min="1" max="6" onchange="javascript:calcprice();">
@@ -24,8 +103,12 @@ Page under construction
 		</div>
 
 		<p id="total"></p>
+		
+					<b>Want to learn more about us? Click <u><a href="about">here</a></u>.</b>
 	</form>
 </div>
+
+
 
 	<script type="text/javascript">
 		
