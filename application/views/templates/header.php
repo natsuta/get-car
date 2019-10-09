@@ -78,6 +78,8 @@
 					echo "<li><a href=".base_url("staff_register").">Add staff</a></li>";
 					echo "<li><a href=".base_url("staff_remove").">View and remove staff</a></li>";
 					echo "<li><a href=".base_url("rental").">View rentals</a></li>";
+					echo "<li><a href=".base_url("cars_add").">Add cars</a></li>";
+					echo "<li><a href=".base_url("cars_remove").">View and remove cars</a></li>";
 					echo "</ul>";
 					echo "</li>";
 				}

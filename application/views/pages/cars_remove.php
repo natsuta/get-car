@@ -44,8 +44,8 @@ table, th, td {
 				$result2=mysqli_query($conn,$sql2);
 
 			?>
-			<tr><th colspan="7"><?php echo $row['location_address']; ?></th></tr>
-			<?php
+			<tr><th colspan="6"><?php echo $row['location_address']; ?></th></tr>
+			<?php 
 				while($row2 = mysqli_fetch_assoc($result2)){
 					$sql3 = "SELECT * FROM rates WHERE carTypeID = $row2[carTypeID]";
 					$result3=mysqli_query($conn,$sql3);
