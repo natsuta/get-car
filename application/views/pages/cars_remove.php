@@ -1,14 +1,21 @@
+<?php
+	if(!isset($_SESSION['username'])) {
+		echo "You do not have permission to access this page.";
+		exit();
+	}
+?>
+
 <style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  table-layout: fixed;
-  width: 100%;
-}
+	table, th, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		table-layout: fixed;
+		width: 100%;
+	}
 </style>
 
 <body>
-	<h2 style="text-align: center;">Cars</h2>
+	<h2 style="text-align: center;">Car Information</h2>
 	<div class="container">
 		<table>
 		<tr>
@@ -16,9 +23,8 @@ table, th, td {
 			<th>Registration</th>
 			<th>Colour</th>
 			<th>Car Type</th>
-			<th>Hourly Rate</th>
-			<th>Daily Rate</th>
 			<th>Availability</th>
+			<th>Remove</th>
 		</tr>
 		<?php
 			
@@ -33,6 +39,12 @@ table, th, td {
 				echo "Failed to connect to MySQL: " . mysqli_connect_error();
 			}
 
+			if(isset($_POST['remove'])) {
+				$index = $_POST['remove'];
+				$sql = "DELETE FROM cars WHERE carID = $index";
+				mysqli_query($conn, $sql);
+			}
+
 			$sql = "SELECT * FROM locations;";
 			$result=mysqli_query($conn,$sql);
 
@@ -43,27 +55,28 @@ table, th, td {
 				$result2=mysqli_query($conn,$sql2);
 
 		?>
-		<tr><th colspan="7"><?php echo $row['location_address']; ?></th></tr>
-		<?php
+		<tr><th colspan="6"><?php echo $row['location_address']; ?></th></tr>
+		<?php 
 			while($row2 = mysqli_fetch_assoc($result2)){
 				$sql3 = "SELECT * FROM rates WHERE carTypeID = $row2[carTypeID]";
 				$result3=mysqli_query($conn,$sql3);
 				$row3=mysqli_fetch_array($result3);
 		?>
-		<tr>
+			<tr>
 		<?php
 			echo "<td>".$row2['carName']."</td>";
 			echo "<td>".$row2['carRego']."</td>";
 			echo "<td>".$row2['colour']."</td>";
 			echo "<td>".$row3['carType']."</td>";
-			echo "<td>$".$row3['hourlyrate']."</td>";
-			echo "<td>$".$row3['dailyrate']."</td>";
 
 			if ($row2['hired'] == 1)
 				echo "<td>Hired</td>";
-			else
+			else {
 				echo "<td>Available</td>";
 		?>
+			<form action="cars_remove" method="post">
+			<td><button type="submit" name="remove" onclick="confirmDelete()" value="<?php echo $row2['carID'] ?>">Remove</button></td>
+		<?php } ?>
 		</tr>
 	</div>
 	<?php
@@ -75,3 +88,9 @@ table, th, td {
 	</div>
 	
 </body>
+
+<script type="text/javascript">
+	function confirmDelete() {
+		confirm("Are you sure you want to delete this car?");
+	}
+</script>

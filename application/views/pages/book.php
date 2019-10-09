@@ -1,82 +1,124 @@
+<head>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+<head>
+
 <style>
+	.booking {
+		margin: auto;
+		font-family: Arial, Helvetica, sans-serif;
+		display: block;
+		padding: 14px 25px;
+		font-size: 15px;
+	}
+</style>
 
-.booking {
-	margin: auto;
-	font-family: Arial, Helvetica, sans-serif;
-	display: block;
-	padding: 14px 25px;
-	font-size: 15px;
+<?php
+	if(!isset($_SESSION['email'])) {
+		echo "You do not have permission to access this page.";
+		exit();
+	}
+?>
+<script type="text/javascript">
+	//Code acknowledgement: https://www.w3schools.com/php/php_ajax_database.asp
+	function showCars(str) {
+		if (str=="") {
+			document.getElementById("carmodule").innerHTML="";
+			return;
+		}
+		if (window.XMLHttpRequest) {
+			// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp=new XMLHttpRequest();
+		} else { // code for IE6, IE5
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange=function() {
+			if (this.readyState==4 && this.status==200) {
+			document.getElementById("carmodule").innerHTML=this.responseText;
+			}
+		}
+		xmlhttp.open("GET","getcars?q="+str,true);
+		xmlhttp.send();
+	}
+	$(document).ready(function(){
+		$('.timepicker').timepicker({
+			timeFormat: 'HH:mm',
+			interval: 30,
+			minTime: '0',
+			maxTime: '23',
+			defaultTime: '09:00',
+			startTime: '0:00',
+			dynamic: true,
+			dropdown: true,
+			scrollbar: true
+		});
+	});
+</script>
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "getcar123456";
+$dbname = "getcar";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+ 
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error); 
 }
+else {
+?>
+<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 
-</style>  
-  
-  <body>
-    <form action="booking_process" method="post">
-      <div class ="booking">
-        <h2>Book Now</h2>
-		
-		<p>Select Pickup Location:
-          <br>
-          <select name="pickuplocation">
-		  <option value="airport">Melbourne Airport</option>
-		  <option value="central">Melbourne Central</option>
-		  <option value="southbank">Southbank</option>
-		  <option value="footscray">Footscray</option>
-		  <option value="sunshine">Sunshine</option>
-		  <option value="stkilda">St Kilda</option>
-		  <option value="williamstown">Williamstown</option>
-		  <option value="essendon">Essendon</option>
-		  </select>
-		  
-		<p>Select Return Location:
-          <br>
-          <select name="returnlocation">
-		  <option value="airport">Melbourne Airport</option>
-		  <option value="central">Melbourne Central</option>
-		  <option value="southbank">Southbank</option>
-		  <option value="footscray">Footscray</option>
-		  <option value="sunshine">Sunshine</option>
-		  <option value="stkilda">St Kilda</option>
-		  <option value="williamstown">Williamstown</option>
-		  <option value="essendon">Essendon</option>
-		  </select>
-		  
-        <p>Select Body Type:
-          <br>
-          <select name="bodytype">
-		  <option value="sedan">Sedan</option>
-		  <option value="hatch">Hatch</option>
-		  <option value="coupe">Coupe</option>
-		  <option value="suv">SUV</option>
-		  </select>
-		  
-        <p>Select Vehicle:
-          <br>
-          <select name="car">
-		  <option value="nissan1">Nissan Pulsar 2016</option>
-		  <option value="nissan2">Nissan Patrol 2017</option>
-		  <option value="honda1">Honda Civic 2015</option>
-		  <option value="honda2">Honda Accord 2019</option>
-		  </select>
-		  
-        <p>Pickup Date & Time:
-          <br>
-          <input type="date" name="pickupdate">
-		  
-
-        <p>Return Date & Time:
-          <br>
-          <input type="date" name="returndate">
-	
-			<br>
-			<br>
+<body>
+	<form action="booking_process" method="post">
+		<div class ="booking">
+			<h2>Book Now</h2>
 			
-        <button type="submit" class="bookbtn" name="Book">Confirm</button>
-		
-      </div>
-    </form>
+			<p>Select Location:
+				<br>
+				<?php
+					$sql = "select * from locations";
+					$result = $conn->query($sql);
+				?>
+				<select name="location" onchange="showCars(this.value)">
+					<option value="">Select a location...</option>
+					<?php
+						while($row=mysqli_fetch_array($result)){
+							echo "<option value='$row[location_id]'>$row[location_address]</option>";
+						}
+					?>
+				</select>
+			</p>
+			<p>Select Car:
+				<br>
+				<!-- Car module, field name is "car" -->
+				<div id="carmodule">
+					<p>Please note that the header and footer will appear again when you select a location, that is unfortunately how CodeIgniter works and I can't do anything about it</p>
+				</div>
+				</p>
+			<p>Pickup Date:
+				<br>
+				<input type="date" name="pickupdate">
+			</p>
+			<p>Pickup Time:
+				<br>
+				<input class="timepicker" name="pickuptime">
 
-    <div class="container register">
-      <p>Don't have a GetCar account?<a href="cust_register"> <b><u>Sign up</u></a>.</b></p>
-    </div>
-  </body>
+			</p>
+			<p>Return Date:
+				<br>
+				<input type="date" name="returndate">
+			</p>
+			<p>Return Time:
+				<br>
+				<input class="timepicker" name="returntime">
+			</p>
+			<br>
+			<button type="submit" class="bookbtn" name="Book">Confirm</button>
+			
+		</div>
+	</form>
+</body>
+<?php
+}
+?>

@@ -5,16 +5,26 @@
 	}
 ?>
 
+<style>
+	table, th, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		table-layout: fixed;
+		width: 100%;
+	}
+</style>
+
 <body>
 	<h2>Staff</h2>
 	<div class="container">
 	<form action="staff_remove" method="post">
 	<table>
 		<tr>
-			<td>Staff ID</td>
-			<td>Username</td>
-			<td>First Name</td>
-			<td>Last Name</td>
+			<th>Staff ID</th>
+			<th>Username</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Remove</th>
 		</tr>
 
 	<?php

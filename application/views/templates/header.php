@@ -7,7 +7,6 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/wireframe.css"); ?>">
 
 	<!-- This is for Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -17,6 +16,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	<!-- Wireframe CSS -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/wireframe.css"); ?>">
 
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 		<!-- Logo -->
@@ -42,7 +44,10 @@
 					<a class="nav-link" href="<?php echo base_url("howto"); ?>">How to Use</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?php echo base_url("cars"); ?>">Locations and Cars</a>
+					<a class="nav-link" href="<?php echo base_url("cars"); ?>">Cars</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?php echo base_url("locations"); ?>">Locations</a>
 				</li>
 
 			<?php 
@@ -66,13 +71,23 @@
 					echo "</li>";
 				}
 
+				if(isset($_SESSION['username'])) {
+					echo "<li class='nav-item dropdown'><a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>Staff";
+					echo "<span class='caret'></span></a>";
+					echo "<ul class='dropdown-menu'>";
+					echo "<li><a href=".base_url("rental").">View rentals</a></li>";
+					echo "<li><a href=".base_url("cars_add").">Add cars</a></li>";
+					echo "<li><a href=".base_url("cars_remove").">View and remove cars</a></li>";
+					echo "</ul>";
+					echo "</li>";
+				}
+				
 				if(isset($_SESSION['username']) && $_SESSION['username'] == "admin") {
 					echo "<li class='nav-item dropdown'><a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>Admin";
 					echo "<span class='caret'></span></a>";
 					echo "<ul class='dropdown-menu'>";
 					echo "<li><a href=".base_url("staff_register").">Add staff</a></li>";
 					echo "<li><a href=".base_url("staff_remove").">View and remove staff</a></li>";
-					echo "<li><a href=".base_url("rental").">View rentals</a></li>";
 					echo "</ul>";
 					echo "</li>";
 				}
