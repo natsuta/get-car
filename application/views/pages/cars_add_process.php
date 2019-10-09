@@ -17,7 +17,7 @@ else {
 	$location = $_POST['location'];
 
 	//connect to database and see if rego exists
-	$sql="select * from cars where carRego = $carRego";
+	$sql="select * from cars where carRego = '$carRego'";
 	$result = $conn->query($sql);
 	$row=mysqli_fetch_array($result);
 
@@ -27,7 +27,7 @@ else {
 
 	else {
 		$query = "insert into cars(carName, carRego, carTypeID, colour, location_id) 
-			VALUES($carName, $carRego, $carType, $colour, $location)";      
+			VALUES('$carName', '$carRego', '$carType', '$colour', '$location')";      
 		$result=$conn->query($query);
 	
 		if($result) {
@@ -37,7 +37,7 @@ else {
 		}
 
 		else {
-			echo "Failed to add car. Try again."; 
+			echo "Failed to add car. Try again.";
 		}
 	}
 }

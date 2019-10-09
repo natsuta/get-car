@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer mt-auto py-3">
 	<div class="container">
 		<a href="index.php">Home</a>
 		<a href="menu.php">About Us</a>
