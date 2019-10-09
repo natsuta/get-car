@@ -39,7 +39,7 @@
 				$result = $conn->query($sql);
 			?>
 			<select name="carType">
-				<option value="">Select a carType...</option>
+				<option value="">Select a Car Type...</option>
 				<?php
 					while($row=mysqli_fetch_array($result)){
 						echo "<option value='$row[carTypeID]'>$row[carType]</option>";
