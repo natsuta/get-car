@@ -1,47 +1,73 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+</style>
+
 <body>
 	<h2>Cars</h2>
 	<div class="container">
+		<table>
+		<tr>
+			<th>Car Name</th>
+			<th>Colour</th>
+			<th>Car Type</th>
+			<th>Hourly Rate</th>
+			<th>Daily Rate</th>
+			<th>Availability</th>
+		</tr>
+		<?php
 			
-				<?php
-					
-					$servername = "localhost";
-					$username = "root";
-					$password = "getcar123456";
-					$dbname = "getcar";
+			$servername = "localhost";
+			$username = "root";
+			$password = "getcar123456";
+			$dbname = "getcar";
 
-					$conn = mysqli_connect($servername, $username, $password, $dbname);
+			$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-					if (mysqli_connect_errno()){
-  						echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  					}
+			if (mysqli_connect_errno()){
+				echo "Failed to connect to MySQL: " . mysqli_connect_error();
+			}
 
-						$sql = "SELECT * FROM cars;";
-						$result=mysqli_query($conn,$sql);
+			$sql = "SELECT * FROM locations;";
+			$result=mysqli_query($conn,$sql);
 
-						$num_rows=mysqli_num_rows($result);
+			$num_rows=mysqli_num_rows($result);
 
-						$i=0;
-						while ($row = mysqli_fetch_assoc($result)){	
-						?>
-						<div class="cars">
+			$i=0;
+			while ($row = mysqli_fetch_assoc($result)){
+				$sql2 = "SELECT * FROM cars WHERE location_id = $row[location_id]";
+				$result2=mysqli_query($conn,$sql2);
 
-							<?php
-							echo "<label>".$row['brand']."</label>"."<br>";
-							echo "<label>".$row['model']."</label>"."<br>";
-							echo "<label>".$row['hourly_price']."</label>"."<br>";
-							echo "<label>".$row['daily_price']."</label>"."<br>";
-				?>
-
-			<button type="button" name="booking">Booking</button>
-			</div>
-<?php
-
-			echo "</tr>";
-			$i++;
-		}
-		mysqli_close($conn);
-				     
-?>
+			?>
+			<tr><th colspan="6"><?php echo $row['location_address']; ?></th></tr>
+			<?php 
+				while($row2 = mysqli_fetch_assoc($result2)){
+					$sql3 = "SELECT * FROM rates WHERE carTypeID = $row2[carTypeID]";
+					$result3=mysqli_query($conn,$sql3);
+					$row3=mysqli_fetch_array($result3);
+			?>
+			<tr>
+			<?php
+					echo "<td>".$row2['carName']."</td>";
+					echo "<td>".$row2['colour']."</td>";
+					echo "<td>".$row3['carType']."</td>";
+					echo "<td>$".$row3['hourlyrate']."</td>";
+					echo "<td>$".$row3['dailyrate']."</td>";
+		?>
+		<td><button type="button" name="booking">Booking</button></td>
+		</tr>
+	</div>
+	<?php
+				}
+				$i++;
+			}
+		mysqli_close($conn);		     
+	?>
+		</table>
 	</div>
 	
 </body>
