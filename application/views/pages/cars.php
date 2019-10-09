@@ -38,38 +38,36 @@ table, th, td {
 
 			$num_rows=mysqli_num_rows($result);
 
-			$i=0;
 			while ($row = mysqli_fetch_assoc($result)){
 				$sql2 = "SELECT * FROM cars WHERE location_id = $row[location_id]";
 				$result2=mysqli_query($conn,$sql2);
 
-			?>
-			<tr><th colspan="7"><?php echo $row['location_address']; ?></th></tr>
-			<?php
-				while($row2 = mysqli_fetch_assoc($result2)){
-					$sql3 = "SELECT * FROM rates WHERE carTypeID = $row2[carTypeID]";
-					$result3=mysqli_query($conn,$sql3);
-					$row3=mysqli_fetch_array($result3);
-			?>
-			<tr>
-			<?php
-					echo "<td>".$row2['carName']."</td>";
-					echo "<td>".$row2['carRego']."</td>";
-					echo "<td>".$row2['colour']."</td>";
-					echo "<td>".$row3['carType']."</td>";
-					echo "<td>$".$row3['hourlyrate']."</td>";
-					echo "<td>$".$row3['dailyrate']."</td>";
+		?>
+		<tr><th colspan="7"><?php echo $row['location_address']; ?></th></tr>
+		<?php
+			while($row2 = mysqli_fetch_assoc($result2)){
+				$sql3 = "SELECT * FROM rates WHERE carTypeID = $row2[carTypeID]";
+				$result3=mysqli_query($conn,$sql3);
+				$row3=mysqli_fetch_array($result3);
+		?>
+		<tr>
+		<?php
+			echo "<td>".$row2['carName']."</td>";
+			echo "<td>".$row2['carRego']."</td>";
+			echo "<td>".$row2['colour']."</td>";
+			echo "<td>".$row3['carType']."</td>";
+			echo "<td>$".$row3['hourlyrate']."</td>";
+			echo "<td>$".$row3['dailyrate']."</td>";
 
-					if ($row2['hired'] == 1)
-						echo "<td>Hired</td>";
-					else
-						echo "<td>Available</td>";
+			if ($row2['hired'] == 1)
+				echo "<td>Hired</td>";
+			else
+				echo "<td>Available</td>";
 		?>
 		</tr>
 	</div>
 	<?php
 				}
-				$i++;
 			}
 		mysqli_close($conn);		     
 	?>

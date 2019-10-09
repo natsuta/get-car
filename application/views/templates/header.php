@@ -71,15 +71,23 @@
 					echo "</li>";
 				}
 
+				if(isset($_SESSION['username'])) {
+					echo "<li class='nav-item dropdown'><a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>Staff";
+					echo "<span class='caret'></span></a>";
+					echo "<ul class='dropdown-menu'>";
+					echo "<li><a href=".base_url("rental").">View rentals</a></li>";
+					echo "<li><a href=".base_url("cars_add").">Add cars</a></li>";
+					echo "<li><a href=".base_url("cars_remove").">View and remove cars</a></li>";
+					echo "</ul>";
+					echo "</li>";
+				}
+				
 				if(isset($_SESSION['username']) && $_SESSION['username'] == "admin") {
 					echo "<li class='nav-item dropdown'><a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>Admin";
 					echo "<span class='caret'></span></a>";
 					echo "<ul class='dropdown-menu'>";
 					echo "<li><a href=".base_url("staff_register").">Add staff</a></li>";
 					echo "<li><a href=".base_url("staff_remove").">View and remove staff</a></li>";
-					echo "<li><a href=".base_url("rental").">View rentals</a></li>";
-					echo "<li><a href=".base_url("cars_add").">Add cars</a></li>";
-					echo "<li><a href=".base_url("cars_remove").">View and remove cars</a></li>";
 					echo "</ul>";
 					echo "</li>";
 				}
