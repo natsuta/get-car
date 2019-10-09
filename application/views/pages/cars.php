@@ -8,7 +8,7 @@ table, th, td {
 </style>
 
 <body>
-	<h2>Cars</h2>
+	<h2 style="text-align: center;">Cars</h2>
 	<div class="container">
 		<table>
 		<tr>
@@ -57,8 +57,12 @@ table, th, td {
 					echo "<td>".$row3['carType']."</td>";
 					echo "<td>$".$row3['hourlyrate']."</td>";
 					echo "<td>$".$row3['dailyrate']."</td>";
+
+					if ($row2['hired'] == 1)
+						echo "<td>Hired</td>";
+					else
+						echo "<td>Available</td>";
 		?>
-		<td><button type="button" name="booking">Booking</button></td>
 		</tr>
 	</div>
 	<?php
