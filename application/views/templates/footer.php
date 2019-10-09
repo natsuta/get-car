@@ -1,5 +1,5 @@
-<footer>
-	<div class="footer">
+<footer class="footer">
+	<div class="container">
 		<a href="index.php">Home</a>
 		<a href="menu.php">About Us</a>
 		<a href="order.php">How to Use</a>
