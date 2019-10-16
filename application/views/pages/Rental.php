@@ -6,11 +6,11 @@
     	<tr>
         	<th align="center" width="10%">Rental ID</th>
         	<th align="center" width="10%">User ID</th>
+			<th align="center" width="10%">Location</th>
         	<th align="center" width="10%">Car ID</th>
         	<th align="center" width="10%">Start Date</th>
         	<th align="center" width="10%">End Date</th>
-        	<th align="center" width="10%">Pick  Up Location</th>
-        	<th align="center" width="10%">Drop Off Location</th>
+        	<th align="center" width="10%">Cost</th>
     	</tr>
 
 				<?php
@@ -29,9 +29,18 @@
 						$sql = "SELECT * FROM rental;";
 						$result=mysqli_query($conn,$sql);
 
-						$num_rows=mysqli_num_rows($result);
+						$sql2 = "SELECT * FROM customers;";
+						$result2=mysqli_query($conn,$sql);
 
-						$i=0;
+						$sql3 = "SELECT * FROM cars;";
+						$result3=mysqli_query($conn,$sql);
+
+						$sql4 = "SELECT * FROM locations;";
+						$result4=mysqli_query($conn,$sql);
+
+						$sql5 = "SELECT * FROM rates;";
+						$result5=mysqli_query($conn,$sql);
+
 						while ($row = mysqli_fetch_assoc($result)){	
 						?>
 						<div class="rental">
@@ -39,18 +48,17 @@
 							<?php
 							echo "<tr>";
 							echo "<td align='center'>".$row['rental_id']."</td>";
-							echo "<td align='center'>".$row['userid']."</td>";
-							echo "<td align='center'>".$row['carsid']."</td>";
+							echo "<td align='center'>".$row['customerID']."</td>";
+							echo "<td align='center'>".$row['locationID']."</td>";
+							echo "<td align='center'>".$row['carID']."</td>";
 							echo "<td align='center'>".$row['start_date']."</td>";
 							echo "<td align='center'>".$row['end_date']."</td>";
-							echo "<td align='center'>".$row['pickup_location']."</td>";
-							echo "<td align='center'>".$row['dropoff_location']."</td>";
+							echo "<td align='center'>".$row['cost']."</td>";
 				?>
 			</div>
 <?php
 
 			echo "</tr>";
-			$i++;
 		}
 		mysqli_close($conn);
 				     
