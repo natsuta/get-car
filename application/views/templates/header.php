@@ -53,7 +53,10 @@
 			<?php 
 				if(isset($_SESSION['usertype']) && $_SESSION['usertype'] == 'Customer'){
 					echo "<li class='nav-item'>";
-					echo "<a class='nav-link' href=".base_url("book").">Bookings</a>";
+					echo "<a class='nav-link' href=".base_url("book").">Book a car</a>";
+					echo "</li>";
+					echo "<li class='nav-item'>";
+					echo "<a class='nav-link' href=".base_url("cust_rental").">View bookings</a>";
 					echo "</li>";
 				}
 				

@@ -1,18 +1,32 @@
-<?php
-	if(!isset($_SESSION['username'])) {
-		echo "You do not have permission to access this page.";
-		exit();
-	}
-?>
-
 <body>
-	<h2>Rental Infomation</h2>
+	<?php
+		$servername = "localhost";
+		$username = "root";
+		$password = "getcar123456";
+		$dbname = "getcar";
+
+		$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+		if (mysqli_connect_errno()){
+			echo "Failed to connect to MySQL: " . mysqli_connect_error();
+		}
+
+		$sql = "SELECT * FROM rental where customerID = $_SESSION[customerID]";
+		$result=mysqli_query($conn,$sql);
+
+		$sql2 = "SELECT * FROM customers where customerID = $_SESSION[customerID]";
+		$result2=mysqli_query($conn,$sql2);
+		$row2 = mysqli_fetch_array($result2);
+
+		echo "<h2>Rental Infomation for ".$row2['firstName']." ".$row2['lastName']."</h2>";
+	?>
+
+	
 	<div class="container">
 			
 		<table border="1" align="center" class = "table">
     	<tr>
         	<th align="center" width="10%">Rental ID</th>
-        	<th align="center" width="10%">Customer Name</th>
 			<th align="center" width="10%">Location Address</th>
         	<th align="center" width="10%">Car Name and Registration</th>
         	<th align="center" width="10%">Start Date</th>
@@ -21,26 +35,7 @@
     	</tr>
 
 		<?php
-			
-			$servername = "localhost";
-			$username = "root";
-			$password = "getcar123456";
-			$dbname = "getcar";
-
-			$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-			if (mysqli_connect_errno()){
-				echo "Failed to connect to MySQL: " . mysqli_connect_error();
-			}
-
-			$sql = "SELECT * FROM rental";
-			$result=mysqli_query($conn,$sql);
-
 			while ($row = mysqli_fetch_assoc($result)){
-				$sql2 = "SELECT * FROM customers where customerID = $row[customerID]";
-				$result2=mysqli_query($conn,$sql2);
-				$row2 = mysqli_fetch_array($result2);
-	
 				$sql3 = "SELECT * FROM cars where carID = $row[carID]";
 				$result3=mysqli_query($conn,$sql3);
 				$row3 = mysqli_fetch_array($result3);
@@ -51,7 +46,6 @@
 
 				echo "<tr>";
 				echo "<td align='center'>".$row['rental_id']."</td>";
-				echo "<td align='center'>".$row2['firstName']." ".$row2['lastName']."</td>";
 				echo "<td align='center'>".$row4['location_address']."</td>";
 				echo "<td align='center'>".$row3['carName']." ".$row3['carRego']."</td>";
 				echo "<td align='center'>".$row['start_date']."</td>";
