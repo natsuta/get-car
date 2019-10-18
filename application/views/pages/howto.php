@@ -45,8 +45,8 @@
 	<div class="hero-image">
 		<div class="hero-text">
 			<h1 style="font-size:50px">GetCar Guide</h1>
+			<p>Whether you're running an errand across town or exploring a city far from home, getting there should be easy.</p>
 			<?php if(!isset($_SESSION['usertype'])) { ?>
-				<p>Whether you're running an errand across town or exploring a city far from home, getting there should be easy.</p>
 				<button onclick="window.location.href = 'cust_register';">Register</button>
 			<?php } ?>
 		</div>
@@ -103,64 +103,61 @@
 		</div>
 
 		<p id="total"></p>
-		
-					<b>Want to learn more about us? Click <u><a href="about">here</a></u>.</b>
+		<p><b>Want to learn more about us? Click <u><a href="about">here</a></u>.</b></p>
 	</form>
 </div>
 
-
-
-	<script type="text/javascript">
-		
-		function display() {
-			if (document.getElementById("hourly").checked) {
-				document.getElementById("hourcalc").style.display = 'block';
-				document.getElementById("daycalc").style.display = 'none';
-			}
-
-			else {
-				document.getElementById("hourcalc").style.display = 'none';
-				document.getElementById("daycalc").style.display = 'block';
-			}
+<script type="text/javascript">
+	
+	function display() {
+		if (document.getElementById("hourly").checked) {
+			document.getElementById("hourcalc").style.display = 'block';
+			document.getElementById("daycalc").style.display = 'none';
 		}
 
-		function calcprice() {
-			var type = document.getElementById("type").value;
-			var hourrate;
-			var dayrate;
-
-			switch (type) {
-				case "econ":
-					hourrate = 7;
-					dayrate = 40;
-					break;
-				case "stdc":
-					hourrate = 8.5;
-					dayrate = 50;
-					break;
-				case "suvw":
-					hourrate = 11;
-					dayrate = 65;
-					break;
-				case "wvan":
-					hourrate = 13;
-					dayrate = 72;
-					break;
-				case "prem":
-					hourrate = 15;
-					dayrate = 88;
-					break;
-			}
-
-			if (document.getElementById("hourly").checked) {
-				var hours = document.getElementById("hours").value;
-				var total = hours * hourrate;
-			}
-
-			else {
-				var days = document.getElementById("days").value;
-				var total = days * dayrate;
-			}
-			document.getElementById("total").innerHTML = "Total: $" + total;
+		else {
+			document.getElementById("hourcalc").style.display = 'none';
+			document.getElementById("daycalc").style.display = 'block';
 		}
-	</script>
+	}
+
+	function calcprice() {
+		var type = document.getElementById("type").value;
+		var hourrate;
+		var dayrate;
+
+		switch (type) {
+			case "econ":
+				hourrate = 7;
+				dayrate = 40;
+				break;
+			case "stdc":
+				hourrate = 8.5;
+				dayrate = 50;
+				break;
+			case "suvw":
+				hourrate = 11;
+				dayrate = 65;
+				break;
+			case "wvan":
+				hourrate = 13;
+				dayrate = 72;
+				break;
+			case "prem":
+				hourrate = 15;
+				dayrate = 88;
+				break;
+		}
+
+		if (document.getElementById("hourly").checked) {
+			var hours = document.getElementById("hours").value;
+			var total = hours * hourrate;
+		}
+
+		else {
+			var days = document.getElementById("days").value;
+			var total = days * dayrate;
+		}
+		document.getElementById("total").innerHTML = "Total: $" + total;
+	}
+</script>
