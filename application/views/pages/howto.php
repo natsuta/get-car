@@ -103,7 +103,7 @@
 		</div>
 
 		<p id="total"></p>
-		<p><b>Want to learn more about us? Click <u><a href="about">here</a></u>.</b></p>
+		<p><b>Want to see how it all works? Click <a href="howto">here</a>.</b></p>
 	</form>
 </div>
 

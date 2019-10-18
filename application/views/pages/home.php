@@ -64,7 +64,7 @@
 			GetCar is a carshare company that owns a number of cars parked at various locations around the city of Melbourne. The way our program works is that users will book a car for a period of time, then return it at any GetCar location available. The system incorporates a user, car and rental information database along with a web & mobile application.
 			<br>
 			<br>
-			<b>Want to learn more about us? Click <u><a href="about">here</a></u>.</b>
+			<p><b>Want to see how it all works? Click <a href="howto">here</a>.</b></p>
 			</p> 
 		</center>
 	</div>

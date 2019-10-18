@@ -72,7 +72,7 @@
 			<br>
 			<h3>Contact Details</h3>
 			<p>Phone: 9748 2255 <br> Email: support@getcar.com.au</p>
-			<b>Want to see how it all works? Click <u><a href="howto">here</a></u>.</b>
+			<p><b>Want to see how it all works? Click <a href="howto">here</a>.</b></p>
 			</p> 
 		</center>
 	</div>
