@@ -30,3 +30,7 @@ Team members:
 - Booking form and processes refined
 - Price estimation calculator added
 - Content added to How to Use page
+
+## Release 5 - 19 October 2019
+- Rental list pages for staff and customers created
+- Updating details page added
