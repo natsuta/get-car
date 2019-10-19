@@ -68,11 +68,11 @@
 			✔ Allows people to lead more active and efficient lives</p>
 			<h2>Foundation and vision</h2>
 			<p>
-			GetCar is parterned with Melbourne City Council, formed to bring car sharing services to Australia. Founded in 2019 by director Ameer Albahem, the company has developed a range of business and IT systems that enable the delivery of consulting, technical services and the provision of on-the-ground car share facilities. Feel free to contact us today if you’d like to know more about GetCar.
+			GetCar is formed in partnership with Melbourne City Council to bring car sharing services to Melbourne. Founded in 2019 by director Ameer Albahem, the company has developed a range of business and IT systems that enable the delivery of consulting, technical services and the provision of on-the-ground car share facilities. Feel free to contact us today if you’d like to know more about GetCar.
 			<br>
 			<h3>Contact Details</h3>
 			<p>Phone: 9748 2255 <br> Email: support@getcar.com.au</p>
-			<b>Want to see how it all works? Click <u><a href="howto">here</a></u>.</b>
+			<p><b>Want to see how it all works? Click <a href="howto">here</a>.</b></p>
 			</p> 
 		</center>
 	</div>

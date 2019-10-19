@@ -49,6 +49,8 @@ else {
 		die ("You have selected too many days for your hire, please try again");
 	}
 
+	$cost = number_format($cost, 2);
+
 	$query = "insert into rental(customerID, locationID, carID, start_date, end_date, cost) 
 		VALUES('$customerID', '$location', '$car', '$startdate', '$enddate', '$cost')";      
 	$result=$conn->query($query);
