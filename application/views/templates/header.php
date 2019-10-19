@@ -54,7 +54,7 @@
 
 			<?php 
 				if(isset($_SESSION['usertype']) && $_SESSION['usertype'] == 'Customer'){
-					echo "<li class='nav-item dropdown'><a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>Staff";
+					echo "<li class='nav-item dropdown'><a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>Customer";
 					echo "<span class='caret'></span></a>";
 					echo "<ul class='dropdown-menu'>";
 					echo "<li><a href=".base_url("book").">Book a car</a></li>";
