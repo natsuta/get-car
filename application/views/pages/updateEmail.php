@@ -5,8 +5,6 @@ $username = "root";
 $password = "getcar123456";
 $dbname = "getcar";
 
-session_start();
-
 $conn = new mysqli($servername, $username, $password, $dbname);
  
 if ($conn->connect_error) {
@@ -16,7 +14,7 @@ else {
 
     $Email = $_SESSION['email'];
     $Password = $_POST["Password"];
-    $Mobile = $_POST['Mobile'];
+    $NewEmail = $_POST['NewEmail'];
 
 
     $sql = "select * from customers where email='$Email'";
@@ -25,11 +23,11 @@ else {
 
 	if (password_verify($Password, $row['password'])) {
 
-    	$sql = "UPDATE customers SET mobile = '".$Mobile."' WHERE Email = '".$_SESSION['email']."'";
+    	$sql = "UPDATE customers SET email = '".$NewEmail."' WHERE Email = '".$_SESSION['email']."'";
 
     	$query = mysqli_query( $conn, $sql );
 
-    	echo "Change phone number successfully.";
+    	echo "Change email address successfully.";
 	}else{
         echo"something wrong";
     }
