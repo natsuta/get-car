@@ -6,7 +6,7 @@
 ?>
 
 <body>
-	<h2>Rental Infomation</h2>
+	<h2>Rental Information</h2>
 	<div class="container">
 			
 		<table border="1" align="center" class = "table">

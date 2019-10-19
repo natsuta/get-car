@@ -18,7 +18,7 @@
 		$result2=mysqli_query($conn,$sql2);
 		$row2 = mysqli_fetch_array($result2);
 
-		echo "<h2>Rental Infomation for ".$row2['firstName']." ".$row2['lastName']."</h2>";
+		echo "<h2>Rental Information for ".$row2['firstName']." ".$row2['lastName']."</h2>";
 	?>
 
 	
