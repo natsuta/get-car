@@ -16,8 +16,10 @@ $sql="SELECT * FROM cars WHERE location_id = $q";
 $result = mysqli_query($conn,$sql);
 echo "<select name='car'>";
 while($row = mysqli_fetch_array($result)) {
-	echo "<option value='$row[carID]'>$row[carType] - $row[colour] $row[carName]</option>";
-
+	$sql2="SELECT * FROM rates WHERE carTypeID = $row[carTypeID]";
+	$result2 = mysqli_query($conn,$sql2);
+	$row2 = mysqli_fetch_array($result2);
+	echo "<option value='$row[carID]'>$row2[carType] - $row[colour] $row[carName]</option>";
 }
 echo "</select>";
 mysqli_close($conn);
