@@ -24,7 +24,7 @@
 
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 		<!-- Logo -->
-		<a class="navbar-brand" href="index.php">
+		<a class="navbar-brand" href="<?php echo base_url(); ?>">
 			<img src="<?php echo base_url("assets/imgs/logo.png"); ?>" style="width:100px;"/>
 		</a>
 
