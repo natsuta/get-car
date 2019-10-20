@@ -16,6 +16,10 @@ else {
 	$Email = $_POST['Email'];
 	$Password = $_POST['Password'];
 	$RePassword = $_POST['RePassword'];
+	$cardname = $_POST['cardname'];
+	$cardnumber = $_POST['cardnumber'];
+	$expdate = $_POST['expdate'];
+	$cvv = $_POST['cvv'];
 
 	if($Password != $RePassword) {
 		echo"Password does not match";
@@ -35,9 +39,8 @@ else {
 		}
 
 		else {
-
-			$query = "insert into customers(email, firstName, lastName, mobile, password) 
-				VALUES('$Email', '$FirstName', '$LastName', '$Mobile', '$PasswordHash')";      
+			$query = "insert into customers(email, firstName, lastName, mobile, password, cardName, cardNumber, expDate, CVV) 
+				VALUES('$Email', '$FirstName', '$LastName', '$Mobile', '$PasswordHash', '$cardname', '$cardnumber', '$expdate', '$cvv')";      
 			$result=$conn->query($query);
 		
 			if($result) {
