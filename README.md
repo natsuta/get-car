@@ -34,3 +34,4 @@ Team members:
 ## Release 5 - 19 October 2019
 - Rental list pages for staff and customers created
 - Updating details page added
+- Combined checkout page with registration page
