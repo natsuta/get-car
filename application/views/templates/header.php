@@ -95,6 +95,7 @@
 					echo "<ul class='dropdown-menu'>";
 					echo "<li><a href=".base_url("staff_register").">Add staff</a></li>";
 					echo "<li><a href=".base_url("staff_remove").">View and remove staff</a></li>";
+					echo "<li><a href=".base_url("user_list").">View users</a></li>";
 					echo "</ul>";
 					echo "</li>";
 				}

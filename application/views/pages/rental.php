@@ -47,6 +47,9 @@
 
 			$sql = "SELECT * FROM rental";
 			$result=mysqli_query($conn,$sql);
+			if(mysqli_num_rows($result)==0) {
+				echo ("You have no bookings to your account. Feel free to <a href=".base_url('book.php').">make a booking</a>.");
+			}
 
 			while ($row = mysqli_fetch_assoc($result)){
 				$sql2 = "SELECT * FROM customers where customerID = $row[customerID]";
