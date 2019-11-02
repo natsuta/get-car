@@ -5,9 +5,21 @@
 	}
 ?>
 
+<style media="print">
+	head {
+		visibility: hidden;
+	}
+	.print {
+		visibility: visible;
+	}
+	.footer {
+		visibility: hidden;
+	}
+</style>
+
 <body>
 	<h2>Rental Information</h2>
-	<div class="container">
+	<div class="container print">
 			
 		<table border="1" align="center" class = "table">
     	<tr>

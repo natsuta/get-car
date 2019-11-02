@@ -1,3 +1,15 @@
+<style media="print">
+	head {
+		visibility: hidden;
+	}
+	.print {
+		visibility: visible;
+	}
+	.footer {
+		visibility: hidden;
+	}
+</style>
+
 <body>
 	<?php
 		$servername = "localhost";
