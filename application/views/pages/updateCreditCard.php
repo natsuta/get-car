@@ -14,7 +14,10 @@ else {
 
     $Email = $_SESSION['email'];
     $Password = $_POST["Password"];
-    $NewEmail = $_POST['NewEmail'];
+    $cardname = $_POST['cardname'];
+	$cardnumber = $_POST['cardnumber'];
+	$expdate = $_POST['expdate'];
+	$cvv = $_POST['cvv'];
 
 
     $sql = "select * from customers where email='$Email'";
@@ -23,11 +26,16 @@ else {
 
 	if (password_verify($Password, $row['password'])) {
 
-    	$sql = "UPDATE customers SET email = '".$NewEmail."' WHERE Email = '".$_SESSION['email']."'";
+    	$sql = "UPDATE customers 
+		SET cardName = '".$cardname."',
+			cardNumber = '".$cardnumber."',
+			expDate = '".$expdate."'
+			CVV = '".$cvv."' 
+		WHERE Email = '".$_SESSION['email']."'";
 
     	$query = mysqli_query( $conn, $sql );
 
-    	echo "Changed email address successfully.";
+    	echo "Changed credit card details successfully.";
 	}else{
         echo "Your password is incorrect. Go back to the <a>".base_url('profile')."profile page";
     }

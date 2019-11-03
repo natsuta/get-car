@@ -27,9 +27,9 @@ else {
 
     	$query = mysqli_query( $conn, $sql );
 
-    	echo "Change phone number successfully.";
+    	echo "Changed phone number successfully.";
 	}else{
-        echo"something wrong";
+        echo "Your password is incorrect. Go back to the <a>".base_url('profile')."profile page";
     }
 
 }

@@ -43,22 +43,47 @@
 				echo "CVV: ".$row['CVV']."<br/>";
 			?>
 		</div>
+		<p><br/></p>
 	</div>
 
-	<br/>
+	<h3>Change name</h3>
+	<p><button href="#changeName" data-toggle="collapse">Collapsible</button></p>
+    <div id="changeName" class="row collapse">
+        <form action="updateName.php" method="POST">
+            <div class="col-sm">
+            	<p>Please input new first name:
+				<br>
+				<input type="text" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')" name="FirstName" placeholder="Alphabet only" required maxlength="20"></p>
+			</div>
+			<div class="col-sm">
+            	<p>Please input new last name:
+				<br>
+				<input type="text" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')" name="LastName" placeholder="Alphabet only" required maxlength="20"></p>
+			</div>
+			<div class="col-sm">
+            <p>Please input password:
+				<br>
+				<input type="password" name="Password" required maxlength="50"></p>
+            </div>
+            <div class="col-sm">
+                <p><button type="submit" class="updatebtn">Update</button></p>
+            </div>
+        </form>
+    </div>
+
 	<h3>Change email address</h3>
 	<p><button href="#changeEmail" data-toggle="collapse">Collapsible</button></p>
     <div id="changeEmail" class="row collapse">
         <form action="updateEmail.php" method="POST">
             <div class="col-sm">
-               <p>Please input new email address:
-            <br>
-            <input type="text" name="Email" required maxlength="50"></p>
+            	<p>Please input new email address:
+				<br>
+				<input type="text" name="Email" required maxlength="50"></p>
 			</div>
 			<div class="col-sm">
             <p>Please input password:
-            <br>
-            <input type="password" name="Password" required maxlength="50"></p>
+				<br>
+				<input type="password" name="Password" required maxlength="50"></p>
             </div>
             <div class="col-sm">
                 <p><button type="submit" class="updatebtn">Update</button></p>
@@ -72,13 +97,13 @@
         <form action="updateMobile.php" method="POST">
 			<div class="col-sm">
                <p>Please input mobile phone:
-            <br>
-            <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" name="Mobile" placeholder="Number only" required maxlength="11"></p>
+				<br>
+				<input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" name="Mobile" placeholder="Number only" required maxlength="11"></p>
 			</div>
 			<div class="col-sm">
-            <p>Please input password:
-            <br>
-            <input type="password" name="Password" required maxlength="50"></p>
+				<p>Please input password:
+				<br>
+				<input type="password" name="Password" required maxlength="50"></p>
             </div>
             <div class="col-sm">
 				<p><button type="submit" class="updatebtn">Update</button></p>
@@ -92,16 +117,16 @@
         <form action="updatePassword.php" method="POST">
 			<div class="col-sm">
                <p>Please input old password:
-            <br>
-            <input type="password" name="Password" required maxlength="50"></p>
+				<br>
+				<input type="password" name="Password" required maxlength="50"></p>
 			</div>
 
 			<div class="col-sm">
-            <p>Please input new password:
-            <br>
-            <input type="password" name="NewPassword" required maxlength="50"></p>
-
+				<p>Please input new password:
+				<br>
+				<input type="password" name="NewPassword" required maxlength="50"></p>
             </div>
+
 			<div class="col-sm">
 				<p><button type="submit" class="updatebtn">Update</button></p>
             </div>
@@ -122,27 +147,32 @@
 				</div>
 			</div>
 			<div class="col-sm">
-			<p>Name on Card:
-			<br>
-			<input type="text" id="cname" name="cardname" required placeholder="Card Name"></p>
+				<p>Name on Card:
+				<br>
+				<input type="text" id="cname" name="cardname" required placeholder="Card Name"></p>
 			</div>
 			<div class="col-sm">
-			<p>Credit Card Number:
-			<br>
-			<input type="text" id="ccnum" name="cardnumber" required placeholder="Card Number"></p>
+				<p>Credit Card Number:
+				<br>
+				<input type="text" id="ccnum" name="cardnumber" required placeholder="Card Number"></p>
 			</div>
 			<div class="col-sm">
-			<p>Expiry Date:
-			<br>
-			<input type="text" id="expdate" name="expdate" required placeholder="MM/YY" pattern="(?:0[1-9]|1[0-2])/[0-9]{2}" /></p>
+				<p>Expiry Date:
+				<br>
+				<input type="text" id="expdate" name="expdate" required placeholder="MM/YY" pattern="(?:0[1-9]|1[0-2])/[0-9]{2}" /></p>
 			</div>
 			<div class="col-sm">
-			<p>CVV:
-			<br>
-			<input type="text" id="cvv" name="cvv" required placeholder="CVV Code"></p>
+				<p>CVV:
+				<br>
+				<input type="text" id="cvv" name="cvv" required placeholder="CVV Code"></p>
 			</div>
 			<div class="col-sm">
-			<p><button type="submit" class="updatebtn">Update</button></p>
+            	<p>Please input password:
+				<br>
+				<input type="password" name="Password" required maxlength="50"></p>
+            </div>
+			<div class="col-sm">
+				<p><button type="submit" class="updatebtn">Update</button></p>
 			</div>
 		</form>
 	</div>

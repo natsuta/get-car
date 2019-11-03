@@ -24,12 +24,14 @@ else {
        	
         $PasswordHash = password_hash($NewPassword, PASSWORD_DEFAULT);
 
-
     	$sql = "UPDATE customers SET password = '".$PasswordHash."' WHERE Email = '".$_SESSION['email']."'";
 
     	$query = mysqli_query( $conn, $sql );
 
-    	echo "Change password successfully.";
+    	echo "Changed password successfully.";
+	}
+	else {
+		echo "Your password is incorrect. Go back to the <a>".base_url('profile')."profile page";
 	}
 
 }
