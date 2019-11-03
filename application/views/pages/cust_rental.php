@@ -31,6 +31,10 @@
 		$row2 = mysqli_fetch_array($result2);
 
 		echo "<h2>Rental Information for ".$row2['firstName']." ".$row2['lastName']."</h2>";
+		if(mysqli_num_rows($result)==0) {
+			echo ("You have no bookings to your account. Feel free to <a href=".base_url('book.php').">make a booking</a>.");
+		}
+		else {
 	?>
 
 	
@@ -47,6 +51,7 @@
     	</tr>
 
 		<?php
+		
 			while ($row = mysqli_fetch_assoc($result)){
 				$sql3 = "SELECT * FROM cars where carID = $row[carID]";
 				$result3=mysqli_query($conn,$sql3);
@@ -65,10 +70,12 @@
 				echo "<td align='center'>".$row['cost']."</td>";
 			echo "</tr>";
 		}
+	}
 		mysqli_close($conn);
 				     
 ?>
 	</table>
+	<p>You have no bookings to your account. Feel free to <a href=".base_url('book.php').">make a booking</a>.</p>
 	</div>
 	
 </body>

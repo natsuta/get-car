@@ -46,7 +46,7 @@ else {
 			if($result) {
 				mysqli_commit($conn);
 				mysqli_close($conn);
-				echo "Registration successful! Return to <a href=".base_url().">home page</a>";
+				echo "Registration successful! Return to <a href=".base_url().">home page</a> or <a href=".base_url('cust_login').">log in</a>";
 			}
 
 			else {
