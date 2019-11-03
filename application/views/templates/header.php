@@ -59,7 +59,7 @@
 					echo "<ul class='dropdown-menu'>";
 					echo "<li><a href=".base_url("book").">Book a car</a></li>";
 					echo "<li><a href=".base_url("cust_rental").">View bookings</a></li>";
-					echo "<li><a href=".base_url("profile").">Change details</a></li>";
+					echo "<li><a href=".base_url("profile").">Profile/Change details</a></li>";
 					echo "</ul>";
 					echo "</li>";
 				}
