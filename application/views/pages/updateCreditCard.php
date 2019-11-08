@@ -29,9 +29,9 @@ else {
     	$sql = "UPDATE customers 
 		SET cardName = '".$cardname."',
 			cardNumber = '".$cardnumber."',
-			expDate = '".$expdate."'
+			expDate = '".$expdate."',
 			CVV = '".$cvv."' 
-		WHERE Email = '".$_SESSION['email']."'";
+		WHERE email = '".$_SESSION['email']."'";
 
     	$query = mysqli_query( $conn, $sql );
 

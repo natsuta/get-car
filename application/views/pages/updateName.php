@@ -27,7 +27,7 @@ else {
     	$sql = "UPDATE customers
 		SET firstName = '".$FirstName."',
 			lastName = '".$LastName."' 
-		WHERE Email = '".$_SESSION['email']."'";
+		WHERE email = '".$_SESSION['email']."'";
 
     	$query = mysqli_query( $conn, $sql );
 

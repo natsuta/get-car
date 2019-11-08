@@ -24,7 +24,7 @@ else {
        	
         $PasswordHash = password_hash($NewPassword, PASSWORD_DEFAULT);
 
-    	$sql = "UPDATE customers SET password = '".$PasswordHash."' WHERE Email = '".$_SESSION['email']."'";
+    	$sql = "UPDATE customers SET password = '".$PasswordHash."' WHERE email = '".$_SESSION['email']."'";
 
     	$query = mysqli_query( $conn, $sql );
 

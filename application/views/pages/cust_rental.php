@@ -32,7 +32,7 @@
 
 		echo "<h2>Rental Information for ".$row2['firstName']." ".$row2['lastName']."</h2>";
 		if(mysqli_num_rows($result)==0) {
-			echo ("You have no bookings to your account. Feel free to <a href=".base_url('book.php').">make a booking</a>.");
+			echo ("You have no bookings to your account. Feel free to <a href=".base_url('book').">make a booking</a>.");
 		}
 		else {
 	?>
@@ -75,7 +75,6 @@
 				     
 ?>
 	</table>
-	<p>You have no bookings to your account. Feel free to <a href=".base_url('book.php').">make a booking</a>.</p>
 	</div>
 	
 </body>

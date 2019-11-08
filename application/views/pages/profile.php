@@ -49,7 +49,7 @@
 	<h3>Change name</h3>
 	<p><button href="#changeName" data-toggle="collapse">Collapsible</button></p>
     <div id="changeName" class="row collapse">
-        <form action="updateName.php" method="POST">
+        <form action="updateName" method="POST">
             <div class="col-sm">
             	<p>Please input new first name:
 				<br>
@@ -74,7 +74,7 @@
 	<h3>Change email address</h3>
 	<p><button href="#changeEmail" data-toggle="collapse">Collapsible</button></p>
     <div id="changeEmail" class="row collapse">
-        <form action="updateEmail.php" method="POST">
+        <form action="updateEmail" method="POST">
             <div class="col-sm">
             	<p>Please input new email address:
 				<br>
@@ -94,7 +94,7 @@
 	<h3>Change phone number</h3>
 	<p><button href="#changePhone" data-toggle="collapse">Collapsible</button></p>
 	<div id="changePhone" class="row collapse">
-        <form action="updateMobile.php" method="POST">
+        <form action="updateMobile" method="POST">
 			<div class="col-sm">
                <p>Please input mobile phone:
 				<br>
@@ -114,7 +114,7 @@
     <h3>Change password</h3>
 	<p><button href="#changePassword" data-toggle="collapse">Collapsible</button></p>
 	<div href="changePassword" class="row collapse">
-        <form action="updatePassword.php" method="POST">
+        <form action="updatePassword" method="POST">
 			<div class="col-sm">
                <p>Please input old password:
 				<br>
@@ -136,7 +136,7 @@
 	<h3>Change credit card details</h3>
 	<p><button href="#changeCard" data-toggle="collapse">Collapsible</button></p>
 	<div id="changeCard" class="row collapse">
-		<form action="updateCreditCard.php" method="POST">
+		<form action="updateCreditCard" method="POST">
 		<div class="col-sm">
 			<label for="fname">Accepted Cards</label>
 				<div class="icon-container">

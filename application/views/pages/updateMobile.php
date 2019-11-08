@@ -23,7 +23,7 @@ else {
 
 	if (password_verify($Password, $row['password'])) {
 
-    	$sql = "UPDATE customers SET mobile = '".$Mobile."' WHERE Email = '".$_SESSION['email']."'";
+    	$sql = "UPDATE customers SET mobile = '".$Mobile."' WHERE email = '".$_SESSION['email']."'";
 
     	$query = mysqli_query( $conn, $sql );
 
