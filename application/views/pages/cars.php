@@ -73,7 +73,7 @@ table, th, td {
 		echo "</table><br/>";
 
 		if(isset($_SESSION['usertype']) && $_SESSION['usertype'] == 'Customer'){
-			echo "<p>Interested in booking a car? Head on over to the <a href='book'>booking page</a></p>!";
+			echo "<p>Interested in booking a car? Head on over to the <a href='book'>booking page</a>!</p>";
 		}
 		elseif(!isset($_SESSION['usertype']) || !isset($_SESSION['username'])){
 			echo "<p>Interested in booking a car? <a href='cust_login'>Log in</a> and book now!</p>";
