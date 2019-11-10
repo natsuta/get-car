@@ -26,7 +26,7 @@ else {
 	}
 
 	else {
-		$query = "insert into cars(carName, carRego, carTypeID, colour, location_id) 
+		$query = "insert into cars(carName, carRego, carTypeID, colour, locationID) 
 			VALUES('$carName', '$carRego', '$carType', '$colour', '$location')";      
 		$result=$conn->query($query);
 	

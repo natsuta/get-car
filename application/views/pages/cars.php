@@ -39,7 +39,7 @@ table, th, td {
 			$num_rows=mysqli_num_rows($result);
 
 			while ($row = mysqli_fetch_assoc($result)){
-				$sql2 = "SELECT * FROM cars WHERE location_id = $row[location_id]";
+				$sql2 = "SELECT * FROM cars WHERE locationID = $row[locationID]";
 				$result2=mysqli_query($conn,$sql2);
 
 		?>

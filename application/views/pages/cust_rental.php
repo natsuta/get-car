@@ -57,7 +57,7 @@
 				$result3=mysqli_query($conn,$sql3);
 				$row3 = mysqli_fetch_array($result3);
 	
-				$sql4 = "SELECT * FROM locations where location_id = $row[locationID]";
+				$sql4 = "SELECT * FROM locations where locationID = $row[locationID]";
 				$result4=mysqli_query($conn,$sql4);
 				$row4 = mysqli_fetch_array($result4);
 

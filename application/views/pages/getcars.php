@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error); 
 }
 
-$sql="SELECT * FROM cars WHERE location_id = $q";
+$sql="SELECT * FROM cars WHERE locationID = $q";
 $result = mysqli_query($conn,$sql);
 echo "<select name='car'>";
 while($row = mysqli_fetch_array($result)) {
