@@ -35,3 +35,8 @@ Team members:
 - Rental list pages for staff and customers created
 - Updating details page added
 - Combined checkout page with registration page
+
+## Release 6 - 10 November 2019
+- Added field to update credit card details
+- Added guidance texts on pages
+- Added print button for rental pages
