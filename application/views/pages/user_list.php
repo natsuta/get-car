@@ -15,7 +15,7 @@
 </style>
 
 <body>
-	<h2>Staff</h2>
+	<h2>Users</h2>
 	<div class="container">
 	<form action="staff_remove" method="post">
 	<table>

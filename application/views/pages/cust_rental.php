@@ -62,7 +62,7 @@
 				$row4 = mysqli_fetch_array($result4);
 
 				echo "<tr>";
-				echo "<td align='center'>".$row['rental_id']."</td>";
+				echo "<td align='center'>".$row['rentalID']."</td>";
 				echo "<td align='center'>".$row4['location_address']."</td>";
 				echo "<td align='center'>".$row3['carName']." ".$row3['carRego']."</td>";
 				echo "<td align='center'>".$row['start_date']."</td>";
