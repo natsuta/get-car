@@ -29,7 +29,7 @@ else {
 
     	echo "Changed phone number successfully.";
 	}else{
-        echo "Your password is incorrect. Go back to the <a>".base_url('profile')."profile page";
+        echo "Your password is incorrect. Go back to the <a href'".base_url('profile')."'>profile page</a>";
     }
 
 }
