@@ -75,6 +75,7 @@
 				     
 ?>
 	</table>
+	<a href='book'>Add another booking</a>
 	</div>
 	
 </body>

@@ -85,6 +85,7 @@
 		mysqli_close($conn);		     
 	?>
 		</table>
+		<a href='cars_add'>Add another car</a>
 	</div>
 	
 </body>

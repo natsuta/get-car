@@ -84,7 +84,7 @@ else {
 					<option value="">Select a location...</option>
 					<?php
 						while($row=mysqli_fetch_array($result)){
-							echo "<option value='$row[location_id]'>$row[location_address]</option>";
+							echo "<option value='$row[locationID]'>$row[location_address]</option>";
 						}
 					?>
 				</select>

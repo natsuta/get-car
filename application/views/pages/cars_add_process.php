@@ -33,7 +33,7 @@ else {
 		if($result) {
 			mysqli_commit($conn);
 			mysqli_close($conn);
-			echo "Car has been added.";
+			echo "Car has been added. You may wish to add <a href='cars_add'>another car</a>.";
 		}
 
 		else {

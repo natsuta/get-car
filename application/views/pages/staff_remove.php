@@ -69,6 +69,7 @@
 	?>
 	</table>
 	</form>
+	<a href='staff_register'>Add another staff member</a>
 	</div>
 	
 </body>
